@@ -14,7 +14,6 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
     <section className="bg-white px-6 py-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-4 items-center">
-          {/* Search Input */}
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <Input
@@ -25,7 +24,6 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
             />
           </div>
 
-          {/* Specialty Filter */}
           <Select value={selectedSpecialty} onValueChange={onSpecialtyChange}>
             <SelectTrigger className="w-full lg:w-48 py-3">
               <SelectValue placeholder="All Specialties" />
@@ -41,7 +39,6 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
             </SelectContent>
           </Select>
 
-          {/* Hospital Filter */}
           <Select value={selectedHospital} onValueChange={onHospitalChange}>
             <SelectTrigger className="w-full lg:w-48 py-3">
               <SelectValue placeholder="All Hospitals" />
@@ -55,7 +52,6 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
             </SelectContent>
           </Select>
 
-          {/* More Filters Button */}
           <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3">
             <Filter className="w-4 h-4 mr-2" />
             More Filters

@@ -46,7 +46,6 @@ const Testimonials = () => {
   return (
     <section className="bg-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -55,17 +54,14 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="border border-gray-200 shadow-sm">
               <CardContent className="p-8">
-                {/* Rating */}
                 <div className="flex items-center mb-6">
                   {renderStars(testimonial.rating)}
                 </div>
 
-                {/* Quote */}
                 <div className="relative mb-6">
                   <Quote className="h-8 w-8 text-gray-300 absolute -top-2 -left-2" />
                   <p className="text-gray-700 leading-relaxed pl-6">
@@ -73,7 +69,6 @@ const Testimonials = () => {
                   </p>
                 </div>
 
-                {/* Patient Info */}
                 <div className="flex items-center">
                   <Avatar className="h-12 w-12 mr-4">
                     <AvatarImage src={testimonial.patientImage} alt={testimonial.patientName} />

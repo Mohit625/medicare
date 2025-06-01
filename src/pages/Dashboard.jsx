@@ -128,7 +128,6 @@ const [loading, setLoading] = useState(false);
     <div className="min-h-screen bg-gray-50">
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-        {/* Welcome Section */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -151,7 +150,6 @@ const [loading, setLoading] = useState(false);
           </div>
         </section>
 
-        {/* Action Cards */}
         <section>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {actionCards.map((card, index) => (
@@ -165,7 +163,6 @@ const [loading, setLoading] = useState(false);
           </div>
         </section>
 
-        {/* Testimonials */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-blue-50/50 border-blue-100">
@@ -181,7 +178,6 @@ const [loading, setLoading] = useState(false);
         </section>
 
         
-        {/* Telemedicine Services */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">24/7 Telemedicine Services</h2>
@@ -212,7 +208,6 @@ const [loading, setLoading] = useState(false);
           </div>
         </section>
 
-        {/* Symptom Checker */}
         <section>
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Describe Your Problem</h2>
@@ -248,10 +243,7 @@ const [loading, setLoading] = useState(false);
                 </Button>
               </div>
               {analysisResult && (
-      // <div className="mt-6 bg-blue-50 p-4 rounded-md text-gray-800">
-      //   <h3 className="font-semibold mb-2">Gemini AI Suggestion:</h3>
-      //   <p>{analysisResult}</p>
-      // </div>
+      
       <GeminiResult response={analysisResult}/>
     )}
             </CardContent>
@@ -259,7 +251,6 @@ const [loading, setLoading] = useState(false);
         </section>
 
 
-        {/* Doctors Section */}
         <section>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-gray-900">Doctors Who Can Help</h2>
@@ -281,7 +272,6 @@ const [loading, setLoading] = useState(false);
           </div>
         </section>
 
-        {/* Upcoming Appointments */}
         <section>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-gray-900">Upcoming Appointments</h2>

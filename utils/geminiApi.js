@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCKtLrl6cZQocOlrNSwjAqcIcTHS8P3jL4"; // Replace with your actual key
+const API_KEY = "AIzaSyCKtLrl6cZQocOlrNSwjAqcIcTHS8P3jL4"; 
 
 export async function getGeminiFlashResponse(prompt) {
   const response = await fetch(

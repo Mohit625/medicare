@@ -55,7 +55,6 @@ export function HeroSection() {
                 </div>
               </div>
               
-              {/* Background decoration */}
               <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full"></div>
               <div className="absolute bottom-6 left-6 w-8 h-8 bg-white/20 rounded-full"></div>
               <div className="absolute top-1/2 right-8 w-6 h-6 bg-white/20 rounded-full"></div>

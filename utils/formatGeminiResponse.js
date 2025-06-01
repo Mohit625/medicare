@@ -4,13 +4,12 @@ export function formatGeminiResponse(rawText) {
     // Remove disclaimer and AI phrases
     const cleaned = rawText
       .replace(/I'm an AI.*?medical advice\./gi, '')
-      .replace(/(?<=\*\*)(.*?)\*\*/g, '$1') // Remove markdown-style bold
-      .replace(/\*{2,}/g, '') // Remove any remaining double asterisks
-      .replace(/\*/g, '-') // Convert single * to dashes for bullet points
-      .replace(/(?:\n\s*){2,}/g, '\n\n') // Collapse extra newlines
+      .replace(/(?<=\*\*)(.*?)\*\*/g, '$1') 
+      .replace(/\*{2,}/g, '')
+      .replace(/\*/g, '-') 
+      .replace(/(?:\n\s*){2,}/g, '\n\n') 
       .trim();
   
-    // Optional: further enhance with section headers
     const withHeaders = cleaned
       .replace(/(?<=^|\n)(Home Remedies.*?)\n/gi, '\n🏠 $1\n')
       .replace(/(?<=^|\n)(When to see a doctor.*?)\n/gi, '\n⚠️ $1\n')

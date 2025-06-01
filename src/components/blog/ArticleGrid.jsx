@@ -43,7 +43,7 @@ const ArticleGrid = () => {
         setLoading(false);
       });
   }, []);
-  //const query = encodeURIComponent(category); // Handles spaces like "Mental Health"
+  //const query = encodeURIComponent(category); 
 //const url = `https://api.unsplash.com/photos/random?query=${query}&client_id=5PX_ng29uMxR2DIASZzfgRX67Xlz83ovTrvZ2niHHMc`;
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 10;

@@ -60,7 +60,7 @@ const AllDoctors = () => {
   const [allDoctors, setallDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3000/api/doctors") // Update if deployed elsewhere
+    fetch("http://localhost:3000/api/doctors") 
       .then(res => res.json())
       .then(data => {
         setallDoctors(data);
@@ -91,14 +91,13 @@ const [selectedHospital, setSelectedHospital] = useState("all");
     if (sortBy === "rating") {
       return b.rating - a.rating;
     } else if (sortBy === "experience") {
-      // Extract years from experience string like "12+ Years Experience"
       const aYears = parseInt(a.experience);
       const bYears = parseInt(b.experience);
       return bYears - aYears;
     } else if (sortBy === "price") {
       return a.consultationFee - b.consultationFee;
     } else {
-      return 0; // relevance: no sorting
+      return 0; 
     }
   });  
   const [currentPage, setCurrentPage] = useState(1);

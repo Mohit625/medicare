@@ -3,15 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
 
-/**
- * @param {Object} props
- * @param {string} props.name - Doctor's name
- * @param {string} props.specialty - Medical specialty
- * @param {number} props.rating - Doctor's rating
- * @param {string} props.experience - Years of experience
- * @param {string} [props.imageUrl] - Optional image URL
- * @param {Function} [props.onBookAppointment] - Callback for booking
- */
+
 const DoctorCard = ({
   name,
   specialty,

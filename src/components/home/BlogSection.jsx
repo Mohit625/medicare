@@ -41,7 +41,6 @@ export function BlogSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <Card key={index} className="group hover:shadow-lg transition-shadow cursor-pointer overflow-hidden">
-            {/* Image with overlay and category badge */}
             <div className="relative h-48 w-full">
               <img
                 src={post.image}

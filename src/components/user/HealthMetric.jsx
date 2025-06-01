@@ -1,12 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 
-/**
- * @param {Object} props
- * @param {React.ElementType} props.icon - Lucide icon component
- * @param {string} props.value - Metric value (e.g., "72 bpm")
- * @param {string} props.label - Label (e.g., "Heart Rate")
- * @param {string} [props.iconColor] - Optional Tailwind text color class
- */
+
 const HealthMetric = ({
   icon: Icon,
   value,

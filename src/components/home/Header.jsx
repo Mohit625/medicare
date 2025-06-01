@@ -65,7 +65,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6">
             {links.map((item) => (
               <a
@@ -78,7 +77,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Buttons Desktop */}
           <div className="hidden md:flex items-center gap-4">
             {isSignedIn ? (
               <>
@@ -113,7 +111,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -126,7 +123,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 shadow-md">
           <nav className="flex flex-col space-y-2 px-4 py-4">

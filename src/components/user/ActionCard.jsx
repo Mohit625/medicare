@@ -2,9 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 /**
  * @param {Object} props
- * @param {React.ElementType} props.icon - Lucide icon component
- * @param {string} props.title - Title text
- * @param {() => void} [props.onClick] - Optional click handler
+ * @param {React.ElementType} props.icon 
+ * @param {string} props.title 
+ * @param {() => void} [props.onClick] 
  */
 const ActionCard = ({ icon: Icon, title, onClick }) => {
   return (

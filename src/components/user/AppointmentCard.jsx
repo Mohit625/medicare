@@ -3,16 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Calendar, Clock, MapPin } from "lucide-react";
 
-/**
- * @param {Object} props
- * @param {string} props.doctorName
- * @param {string} props.specialty
- * @param {string} props.date
- * @param {string} props.time
- * @param {string} props.location
- * @param {string} [props.imageUrl]
- * @param {Function} [props.onReschedule]
- */
+
 const AppointmentCard = ({
   doctorName,
   specialty,

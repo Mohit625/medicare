@@ -66,10 +66,8 @@ const HospitalsList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {hospitals.map((hospital) => (
             <Card key={hospital.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
-              {/* Purple gradient header with geometric shape */}
               <div className="bg-gradient-to-br from-purple-200 to-purple-300 h-32 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Geometric blue shape */}
                   <div className="w-24 h-16 bg-blue-600 transform rotate-12 rounded-lg"></div>
                 </div>
               </div>
@@ -85,7 +83,6 @@ const HospitalsList = () => {
                   <span className="text-sm font-medium text-gray-700">{hospital.rating}</span>
                 </div>
 
-                {/* Hospital Details */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-start text-sm text-gray-600">
                     <MapPin className="h-4 w-4 mr-2 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -101,7 +98,6 @@ const HospitalsList = () => {
                   </div>
                 </div>
 
-                {/* Specialties */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {hospital.specialties.map((specialty, index) => (
                     <Badge key={index} variant="secondary" className="text-xs">
@@ -110,7 +106,6 @@ const HospitalsList = () => {
                   ))}
                 </div>
 
-                {/* View Hospital Button */}
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                   View Hospital
                 </Button>
@@ -119,7 +114,6 @@ const HospitalsList = () => {
           ))}
         </div>
 
-        {/* View All Hospitals Link */}
         <div className="text-center">
           <Button variant="link" className="text-blue-600 hover:text-blue-700 font-medium">
             View All Hospitals

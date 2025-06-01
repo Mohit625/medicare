@@ -14,7 +14,7 @@ export function getTopDoctorsByDiseases(diseases) {
 
   const sortedDoctors = matchingDoctors
     .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4); // Top 4 by rating
+    .slice(0, 4); 
 
   return sortedDoctors;
 }

@@ -16,7 +16,6 @@ const Header = () => {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
               <div className="p-2 bg-blue-600 rounded-lg">
@@ -28,7 +27,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Button
@@ -41,7 +39,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* User Avatar */}
           <div className="flex items-center">
             <Avatar className="h-10 w-10">
               <AvatarImage src="/placeholder.svg" alt="User" />

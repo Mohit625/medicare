@@ -39,7 +39,7 @@ export default function Hospitals() {
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3000/api/hospitals") // Update if deployed elsewhere
+    fetch("http://localhost:3000/api/hospitals") 
       .then(res => res.json())
       .then(data => {
         setHospitals(data);
@@ -63,7 +63,6 @@ export default function Hospitals() {
     <div className="min-h-screen bg-gray-50">
       <HeroSection />
 
-      {/* Quote Section */}
       <section className="py-16 px-6 bg-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -109,7 +108,6 @@ export default function Hospitals() {
         </div>
       </section>
 
-      {/* Hospitals Listing Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
@@ -137,7 +135,6 @@ export default function Hospitals() {
             ))}
           </div>
           
-          {/* Pagination */}
           <div className="mt-8 flex justify-center">
   <Pagination>
     <PaginationContent>
@@ -181,7 +178,6 @@ export default function Hospitals() {
         </div>
       </section>
 
-      {/* Patient Testimonials Section */}
       <section className="py-16 px-6 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">

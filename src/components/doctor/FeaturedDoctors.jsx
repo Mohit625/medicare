@@ -90,7 +90,6 @@ const FeaturedDoctors = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredDoctors.map((doctor) => (
             <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
-              {/* Blue header with avatar */}
               <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-32 relative">
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
                   <Avatar className="h-16 w-16 border-4 border-white">
@@ -106,7 +105,6 @@ const FeaturedDoctors = () => {
                 <h3 className="font-bold text-lg text-gray-900 mb-1">{doctor.name}</h3>
                 <p className="text-blue-600 font-medium mb-3">{doctor.specialty}</p>
 
-                {/* Rating */}
                 <div className="flex items-center justify-center mb-4">
                   <div className="flex mr-2">
                     {renderStars(doctor.rating)}
@@ -114,7 +112,6 @@ const FeaturedDoctors = () => {
                   <span className="text-sm font-medium text-gray-700">{doctor.rating}</span>
                 </div>
 
-                {/* Details */}
                 <div className="space-y-2 text-sm text-gray-600 mb-4">
                   <div className="flex items-center justify-center">
                     <Building2 className="h-4 w-4 mr-2 text-blue-500" />
