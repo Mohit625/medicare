@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Evergreen Hospital",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.8,
+    "reviewCount": 52,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 106,
+    "image": "https://picsum.photos/seed/1-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "Harmony Wellness Center",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.9,
+    "reviewCount": 287,
+    "description": "Harmony Wellness Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 96,
+    "image": "https://picsum.photos/seed/2-Harmony-Wellness-Center/600/400"
+  },
+  {
+    "name": "OrthoPlus Clinic",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.8,
+    "reviewCount": 246,
+    "description": "OrthoPlus Clinic is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 141,
+    "image": "https://picsum.photos/seed/3-OrthoPlus-Clinic/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "987 Cedar St, Miami, FL",
+    "rating": 4.8,
+    "reviewCount": 232,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 92,
+    "image": "https://picsum.photos/seed/4-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "Sunrise Health Institute",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.5,
+    "reviewCount": 246,
+    "description": "Sunrise Health Institute is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 134,
+    "image": "https://picsum.photos/seed/5-Sunrise-Health-Institute/600/400"
+  },
+  {
+    "name": "RiverView Medical",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 4.3,
+    "reviewCount": 104,
+    "description": "RiverView Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 85,
+    "image": "https://picsum.photos/seed/6-RiverView-Medical/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "987 Cedar St, Miami, FL",
+    "rating": 5.0,
+    "reviewCount": 168,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 136,
+    "image": "https://picsum.photos/seed/7-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 4.8,
+    "reviewCount": 151,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 84,
+    "image": "https://picsum.photos/seed/8-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.2,
+    "reviewCount": 42,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 166,
+    "image": "https://picsum.photos/seed/9-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "135 Aspen Cir, Boston, MA",
+    "rating": 4.5,
+    "reviewCount": 56,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 78,
+    "image": "https://picsum.photos/seed/10-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "RiverView Medical",
+    "address": "321 Maple Rd, Houston, TX",
+    "rating": 4.7,
+    "reviewCount": 83,
+    "description": "RiverView Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 117,
+    "image": "https://picsum.photos/seed/11-RiverView-Medical/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "987 Cedar St, Miami, FL",
+    "rating": 4.3,
+    "reviewCount": 136,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 144,
+    "image": "https://picsum.photos/seed/12-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.6,
+    "reviewCount": 275,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 107,
+    "image": "https://picsum.photos/seed/13-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "OrthoPlus Clinic",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 4.7,
+    "reviewCount": 157,
+    "description": "OrthoPlus Clinic is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 164,
+    "image": "https://picsum.photos/seed/14-OrthoPlus-Clinic/600/400"
+  },
+  {
+    "name": "OrthoPlus Clinic",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.8,
+    "reviewCount": 127,
+    "description": "OrthoPlus Clinic is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 157,
+    "image": "https://picsum.photos/seed/15-OrthoPlus-Clinic/600/400"
+  },
+  {
+    "name": "RiverView Medical",
+    "address": "432 Spruce Ct, Denver, CO",
+    "rating": 4.8,
+    "reviewCount": 157,
+    "description": "RiverView Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 129,
+    "image": "https://picsum.photos/seed/16-RiverView-Medical/600/400"
+  },
+  {
+    "name": "Sunrise Health Institute",
+    "address": "456 Oak Ave, Los Angeles, CA",
+    "rating": 4.7,
+    "reviewCount": 167,
+    "description": "Sunrise Health Institute is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 117,
+    "image": "https://picsum.photos/seed/17-Sunrise-Health-Institute/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.3,
+    "reviewCount": 44,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 129,
+    "image": "https://picsum.photos/seed/18-City-General-Hospital/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.3,
+    "reviewCount": 145,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 59,
+    "image": "https://picsum.photos/seed/19-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "Sunrise Health Institute",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 4.9,
+    "reviewCount": 117,
+    "description": "Sunrise Health Institute is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Pediatrics",
+      "Dermatology",
+      "General Medicine"
+    ],
+    "doctorCount": 93,
+    "image": "https://picsum.photos/seed/20-Sunrise-Health-Institute/600/400"
+  },
+  {
+    "name": "Pine Valley Medical",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.9,
+    "reviewCount": 262,
+    "description": "Pine Valley Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 100,
+    "image": "https://picsum.photos/seed/21-Pine-Valley-Medical/600/400"
+  },
+  {
+    "name": "RiverView Medical",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.6,
+    "reviewCount": 128,
+    "description": "RiverView Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Pediatrics",
+      "Dermatology",
+      "General Medicine"
+    ],
+    "doctorCount": 137,
+    "image": "https://picsum.photos/seed/22-RiverView-Medical/600/400"
+  },
+  {
+    "name": "Harmony Wellness Center",
+    "address": "432 Spruce Ct, Denver, CO",
+    "rating": 5.0,
+    "reviewCount": 88,
+    "description": "Harmony Wellness Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 200,
+    "image": "https://picsum.photos/seed/23-Harmony-Wellness-Center/600/400"
+  },
+  {
+    "name": "Pine Valley Medical",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 4.4,
+    "reviewCount": 99,
+    "description": "Pine Valley Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 158,
+    "image": "https://picsum.photos/seed/24-Pine-Valley-Medical/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.2,
+    "reviewCount": 232,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 76,
+    "image": "https://picsum.photos/seed/25-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.6,
+    "reviewCount": 118,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 170,
+    "image": "https://picsum.photos/seed/26-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "321 Maple Rd, Houston, TX",
+    "rating": 4.9,
+    "reviewCount": 253,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 137,
+    "image": "https://picsum.photos/seed/27-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "Prime Medical Center",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.7,
+    "reviewCount": 132,
+    "description": "Prime Medical Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 191,
+    "image": "https://picsum.photos/seed/28-Prime-Medical-Center/600/400"
+  },
+  {
+    "name": "Summit Health Hub",
+    "address": "456 Oak Ave, Los Angeles, CA",
+    "rating": 4.8,
+    "reviewCount": 91,
+    "description": "Summit Health Hub is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 180,
+    "image": "https://picsum.photos/seed/29-Summit-Health-Hub/600/400"
+  },
+  {
+    "name": "Pine Valley Medical",
+    "address": "876 Willow Way, Atlanta, GA",
+    "rating": 4.8,
+    "reviewCount": 198,
+    "description": "Pine Valley Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 195,
+    "image": "https://picsum.photos/seed/30-Pine-Valley-Medical/600/400"
+  },
+  {
+    "name": "Harmony Wellness Center",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.8,
+    "reviewCount": 214,
+    "description": "Harmony Wellness Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Pediatrics",
+      "Dermatology",
+      "General Medicine"
+    ],
+    "doctorCount": 156,
+    "image": "https://picsum.photos/seed/31-Harmony-Wellness-Center/600/400"
+  },
+  {
+    "name": "Harmony Wellness Center",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.2,
+    "reviewCount": 225,
+    "description": "Harmony Wellness Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 137,
+    "image": "https://picsum.photos/seed/32-Harmony-Wellness-Center/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "456 Oak Ave, Los Angeles, CA",
+    "rating": 4.5,
+    "reviewCount": 102,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 161,
+    "image": "https://picsum.photos/seed/33-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Summit Health Hub",
+    "address": "456 Oak Ave, Los Angeles, CA",
+    "rating": 4.5,
+    "reviewCount": 295,
+    "description": "Summit Health Hub is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 164,
+    "image": "https://picsum.photos/seed/34-Summit-Health-Hub/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.5,
+    "reviewCount": 212,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 157,
+    "image": "https://picsum.photos/seed/35-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Pine Valley Medical",
+    "address": "213 Birch Blvd, Seattle, WA",
+    "rating": 5.0,
+    "reviewCount": 103,
+    "description": "Pine Valley Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 160,
+    "image": "https://picsum.photos/seed/36-Pine-Valley-Medical/600/400"
+  },
+  {
+    "name": "Summit Health Hub",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.3,
+    "reviewCount": 209,
+    "description": "Summit Health Hub is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 51,
+    "image": "https://picsum.photos/seed/37-Summit-Health-Hub/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "321 Maple Rd, Houston, TX",
+    "rating": 4.4,
+    "reviewCount": 252,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 85,
+    "image": "https://picsum.photos/seed/38-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "135 Aspen Cir, Boston, MA",
+    "rating": 4.2,
+    "reviewCount": 199,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Pediatrics",
+      "Dermatology",
+      "General Medicine"
+    ],
+    "doctorCount": 127,
+    "image": "https://picsum.photos/seed/39-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Prime Medical Center",
+    "address": "654 Pine Ln, Phoenix, AZ",
+    "rating": 4.5,
+    "reviewCount": 112,
+    "description": "Prime Medical Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 115,
+    "image": "https://picsum.photos/seed/40-Prime-Medical-Center/600/400"
+  },
+  {
+    "name": "Prime Medical Center",
+    "address": "432 Spruce Ct, Denver, CO",
+    "rating": 4.3,
+    "reviewCount": 147,
+    "description": "Prime Medical Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 199,
+    "image": "https://picsum.photos/seed/41-Prime-Medical-Center/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.9,
+    "reviewCount": 112,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 179,
+    "image": "https://picsum.photos/seed/42-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "987 Cedar St, Miami, FL",
+    "rating": 4.3,
+    "reviewCount": 260,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 144,
+    "image": "https://picsum.photos/seed/43-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Summit Health Hub",
+    "address": "987 Cedar St, Miami, FL",
+    "rating": 4.5,
+    "reviewCount": 144,
+    "description": "Summit Health Hub is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 119,
+    "image": "https://picsum.photos/seed/44-Summit-Health-Hub/600/400"
+  },
+  {
+    "name": "City General Hospital",
+    "address": "789 Elm Dr, Chicago, IL",
+    "rating": 4.7,
+    "reviewCount": 205,
+    "description": "City General Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Nephrology",
+      "Gastroenterology",
+      "Endocrinology"
+    ],
+    "doctorCount": 161,
+    "image": "https://picsum.photos/seed/45-City-General-Hospital/600/400"
+  },
+  {
+    "name": "Prime Medical Center",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.9,
+    "reviewCount": 59,
+    "description": "Prime Medical Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 67,
+    "image": "https://picsum.photos/seed/46-Prime-Medical-Center/600/400"
+  },
+  {
+    "name": "Pine Valley Medical",
+    "address": "876 Willow Way, Atlanta, GA",
+    "rating": 4.8,
+    "reviewCount": 145,
+    "description": "Pine Valley Medical is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "ENT",
+      "Gynecology",
+      "Psychiatry"
+    ],
+    "doctorCount": 122,
+    "image": "https://picsum.photos/seed/47-Pine-Valley-Medical/600/400"
+  },
+  {
+    "name": "Evergreen Hospital",
+    "address": "456 Oak Ave, Los Angeles, CA",
+    "rating": 4.8,
+    "reviewCount": 90,
+    "description": "Evergreen Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Cardiology",
+      "Neurology",
+      "Orthopedics"
+    ],
+    "doctorCount": 133,
+    "image": "https://picsum.photos/seed/48-Evergreen-Hospital/600/400"
+  },
+  {
+    "name": "MetroCare Hospital",
+    "address": "432 Spruce Ct, Denver, CO",
+    "rating": 4.6,
+    "reviewCount": 114,
+    "description": "MetroCare Hospital is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Pediatrics",
+      "Dermatology",
+      "General Medicine"
+    ],
+    "doctorCount": 72,
+    "image": "https://picsum.photos/seed/49-MetroCare-Hospital/600/400"
+  },
+  {
+    "name": "Prime Medical Center",
+    "address": "123 Main St, New York, NY",
+    "rating": 4.8,
+    "reviewCount": 293,
+    "description": "Prime Medical Center is a leading facility known for excellence in patient care, modern technology, and a team of experienced specialists.",
+    "specialties": [
+      "Oncology",
+      "Radiology",
+      "Emergency Medicine"
+    ],
+    "doctorCount": 98,
+    "image": "https://picsum.photos/seed/50-Prime-Medical-Center/600/400"
+  }
+]

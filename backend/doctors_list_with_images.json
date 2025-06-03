@@ -1,0 +1,852 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Emily Williams",
+    "specialty": "Dermatologist",
+    "image": "https://picsum.photos/seed/1-Dermatologist/400/400",
+    "rating": 4.9,
+    "reviewCount": 273,
+    "hospital": "OrthoPlus",
+    "education": "Stanford University",
+    "experience": "13+ Years Experience",
+    "consultationFee": 81,
+    "availability": "Available Today",
+    "description": "Dr. Dermatologist treats skin-related conditions with expertise in cosmetic and medical dermatology. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Dermatologist"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dr. James Williams",
+    "specialty": "Endocrinologist",
+    "image": "https://picsum.photos/seed/2-Endocrinologist/400/400",
+    "rating": 4.3,
+    "reviewCount": 96,
+    "hospital": "Harmony Clinic",
+    "education": "Harvard Medical School",
+    "experience": "17+ Years Experience",
+    "consultationFee": 176,
+    "availability": "Available Today",
+    "description": "Dr. Endocrinologist manages hormonal disorders including diabetes and thyroid conditions. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Endocrinologist"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dr. David Rodriguez",
+    "specialty": "Psychiatrist",
+    "image": "https://picsum.photos/seed/3-Psychiatrist/400/400",
+    "rating": 4.6,
+    "reviewCount": 178,
+    "hospital": "Prime Medical Center",
+    "education": "University of Chicago",
+    "experience": "19+ Years Experience",
+    "consultationFee": 136,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Psychiatrist provides mental health support, including therapy and medication management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Psychiatrist"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dr. Michael Davis",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/4-Cardiologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 107,
+    "hospital": "Harmony Clinic",
+    "education": "Columbia University",
+    "experience": "17+ Years Experience",
+    "consultationFee": 131,
+    "availability": "Available Today",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Dr. Emma Garcia",
+    "specialty": "Dermatologist",
+    "image": "https://picsum.photos/seed/5-Dermatologist/400/400",
+    "rating": 4.5,
+    "reviewCount": 259,
+    "hospital": "OrthoPlus",
+    "education": "Columbia University",
+    "experience": "5+ Years Experience",
+    "consultationFee": 170,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Dermatologist treats skin-related conditions with expertise in cosmetic and medical dermatology. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Dermatologist"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Dr. Robert Brown",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/6-Cardiologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 277,
+    "hospital": "Harmony Clinic",
+    "education": "Harvard Medical School",
+    "experience": "18+ Years Experience",
+    "consultationFee": 122,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Dr. Ava Martinez",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/7-Cardiologist/400/400",
+    "rating": 4.7,
+    "reviewCount": 140,
+    "hospital": "Sunrise Health",
+    "education": "Stanford University",
+    "experience": "15+ Years Experience",
+    "consultationFee": 163,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dr. David Jones",
+    "specialty": "ENT Specialist",
+    "image": "https://picsum.photos/seed/8-ENT-Specialist/400/400",
+    "rating": 4.4,
+    "reviewCount": 209,
+    "hospital": "Sunrise Health",
+    "education": "Stanford University",
+    "experience": "13+ Years Experience",
+    "consultationFee": 95,
+    "availability": "Available Today",
+    "description": "Dr. ENT focuses on disorders of the ear, nose, and throat using medical and surgical treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "ENT Specialist"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Dr. Michael Rodriguez",
+    "specialty": "Neurologist",
+    "image": "https://picsum.photos/seed/9-Neurologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 101,
+    "hospital": "OrthoPlus",
+    "education": "University of Chicago",
+    "experience": "8+ Years Experience",
+    "consultationFee": 196,
+    "availability": "Available Today",
+    "description": "Dr. Neurologist treats brain, spine, and nerve disorders using cutting-edge neurology care. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Neurologist"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Dr. Emily Jones",
+    "specialty": "General Physician",
+    "image": "https://picsum.photos/seed/10-General-Physician/400/400",
+    "rating": 4.5,
+    "reviewCount": 212,
+    "hospital": "City General Hospital",
+    "education": "University of Chicago",
+    "experience": "18+ Years Experience",
+    "consultationFee": 137,
+    "availability": "Available Today",
+    "description": "Dr. General specializes in preventive care and chronic disease management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "General Physician"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Dr. Robert Jones",
+    "specialty": "Gynecologist",
+    "image": "https://picsum.photos/seed/11-Gynecologist/400/400",
+    "rating": 4.9,
+    "reviewCount": 119,
+    "hospital": "Harmony Clinic",
+    "education": "Columbia University",
+    "experience": "8+ Years Experience",
+    "consultationFee": 101,
+    "availability": "Available Today",
+    "description": "Dr. Gynecologist specializes in women's reproductive health and preventative screenings. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Gynecologist"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dr. James Garcia",
+    "specialty": "General Physician",
+    "image": "https://picsum.photos/seed/12-General-Physician/400/400",
+    "rating": 4.9,
+    "reviewCount": 264,
+    "hospital": "City General Hospital",
+    "education": "University of Chicago",
+    "experience": "6+ Years Experience",
+    "consultationFee": 146,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. General specializes in preventive care and chronic disease management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "General Physician"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Dr. Sophia Martinez",
+    "specialty": "ENT Specialist",
+    "image": "https://picsum.photos/seed/13-ENT-Specialist/400/400",
+    "rating": 4.4,
+    "reviewCount": 201,
+    "hospital": "OrthoPlus",
+    "education": "Harvard Medical School",
+    "experience": "17+ Years Experience",
+    "consultationFee": 91,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. ENT focuses on disorders of the ear, nose, and throat using medical and surgical treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "ENT Specialist"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Dr. Robert Brown",
+    "specialty": "Orthopedic Surgeon",
+    "image": "https://picsum.photos/seed/14-Orthopedic-Surgeon/400/400",
+    "rating": 4.8,
+    "reviewCount": 73,
+    "hospital": "City General Hospital",
+    "education": "University of Chicago",
+    "experience": "20+ Years Experience",
+    "consultationFee": 113,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Orthopedic performs surgeries related to bones, joints, and muscle injuries. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Orthopedic Surgeon"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dr. Sophia Martinez",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/15-Pediatrician/400/400",
+    "rating": 5.0,
+    "reviewCount": 273,
+    "hospital": "OrthoPlus",
+    "education": "Johns Hopkins University",
+    "experience": "8+ Years Experience",
+    "consultationFee": 180,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Dr. Emily Martinez",
+    "specialty": "Gynecologist",
+    "image": "https://picsum.photos/seed/16-Gynecologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 235,
+    "hospital": "City General Hospital",
+    "education": "Mayo Clinic School",
+    "experience": "16+ Years Experience",
+    "consultationFee": 200,
+    "availability": "Available Today",
+    "description": "Dr. Gynecologist specializes in women's reproductive health and preventative screenings. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Gynecologist"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Dr. Emma Rodriguez",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/17-Pediatrician/400/400",
+    "rating": 4.4,
+    "reviewCount": 250,
+    "hospital": "City General Hospital",
+    "education": "Johns Hopkins University",
+    "experience": "10+ Years Experience",
+    "consultationFee": 156,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Dr. David Williams",
+    "specialty": "Neurologist",
+    "image": "https://picsum.photos/seed/18-Neurologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 200,
+    "hospital": "OrthoPlus",
+    "education": "Johns Hopkins University",
+    "experience": "16+ Years Experience",
+    "consultationFee": 119,
+    "availability": "Available Today",
+    "description": "Dr. Neurologist treats brain, spine, and nerve disorders using cutting-edge neurology care. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Neurologist"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Dr. John Martinez",
+    "specialty": "Orthopedic Surgeon",
+    "image": "https://picsum.photos/seed/19-Orthopedic-Surgeon/400/400",
+    "rating": 4.5,
+    "reviewCount": 275,
+    "hospital": "Harmony Clinic",
+    "education": "Mayo Clinic School",
+    "experience": "8+ Years Experience",
+    "consultationFee": 182,
+    "availability": "Available Today",
+    "description": "Dr. Orthopedic performs surgeries related to bones, joints, and muscle injuries. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Orthopedic Surgeon"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Dr. John Martinez",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/20-Cardiologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 222,
+    "hospital": "Sunrise Health",
+    "education": "Columbia University",
+    "experience": "8+ Years Experience",
+    "consultationFee": 102,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Dr. Robert Garcia",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/21-Pediatrician/400/400",
+    "rating": 4.3,
+    "reviewCount": 126,
+    "hospital": "City General Hospital",
+    "education": "Columbia University",
+    "experience": "6+ Years Experience",
+    "consultationFee": 167,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Dr. Sophia Smith",
+    "specialty": "General Physician",
+    "image": "https://picsum.photos/seed/22-General-Physician/400/400",
+    "rating": 4.9,
+    "reviewCount": 191,
+    "hospital": "Harmony Clinic",
+    "education": "Stanford University",
+    "experience": "12+ Years Experience",
+    "consultationFee": 81,
+    "availability": "Available Today",
+    "description": "Dr. General specializes in preventive care and chronic disease management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "General Physician"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Dr. James Rodriguez",
+    "specialty": "Gynecologist",
+    "image": "https://picsum.photos/seed/23-Gynecologist/400/400",
+    "rating": 4.7,
+    "reviewCount": 75,
+    "hospital": "Prime Medical Center",
+    "education": "Harvard Medical School",
+    "experience": "17+ Years Experience",
+    "consultationFee": 117,
+    "availability": "Available Today",
+    "description": "Dr. Gynecologist specializes in women's reproductive health and preventative screenings. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Gynecologist"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Dr. James Brown",
+    "specialty": "Psychiatrist",
+    "image": "https://picsum.photos/seed/24-Psychiatrist/400/400",
+    "rating": 4.7,
+    "reviewCount": 289,
+    "hospital": "Harmony Clinic",
+    "education": "Columbia University",
+    "experience": "14+ Years Experience",
+    "consultationFee": 154,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Psychiatrist provides mental health support, including therapy and medication management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Psychiatrist"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Dr. John Jones",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/25-Pediatrician/400/400",
+    "rating": 4.9,
+    "reviewCount": 271,
+    "hospital": "OrthoPlus",
+    "education": "Harvard Medical School",
+    "experience": "20+ Years Experience",
+    "consultationFee": 176,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Dr. Michael Williams",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/26-Cardiologist/400/400",
+    "rating": 4.9,
+    "reviewCount": 257,
+    "hospital": "OrthoPlus",
+    "education": "Mayo Clinic School",
+    "experience": "7+ Years Experience",
+    "consultationFee": 131,
+    "availability": "Available Today",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Dr. Sophia Garcia",
+    "specialty": "Dermatologist",
+    "image": "https://picsum.photos/seed/27-Dermatologist/400/400",
+    "rating": 4.9,
+    "reviewCount": 146,
+    "hospital": "Sunrise Health",
+    "education": "Stanford University",
+    "experience": "12+ Years Experience",
+    "consultationFee": 189,
+    "availability": "Available Today",
+    "description": "Dr. Dermatologist treats skin-related conditions with expertise in cosmetic and medical dermatology. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Dermatologist"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Dr. Robert Smith",
+    "specialty": "ENT Specialist",
+    "image": "https://picsum.photos/seed/28-ENT-Specialist/400/400",
+    "rating": 4.7,
+    "reviewCount": 215,
+    "hospital": "Prime Medical Center",
+    "education": "Johns Hopkins University",
+    "experience": "11+ Years Experience",
+    "consultationFee": 139,
+    "availability": "Available Today",
+    "description": "Dr. ENT focuses on disorders of the ear, nose, and throat using medical and surgical treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "ENT Specialist"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Dr. James Rodriguez",
+    "specialty": "Orthopedic Surgeon",
+    "image": "https://picsum.photos/seed/29-Orthopedic-Surgeon/400/400",
+    "rating": 4.7,
+    "reviewCount": 113,
+    "hospital": "Prime Medical Center",
+    "education": "Johns Hopkins University",
+    "experience": "20+ Years Experience",
+    "consultationFee": 186,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Orthopedic performs surgeries related to bones, joints, and muscle injuries. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Orthopedic Surgeon"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Dr. Robert Brown",
+    "specialty": "ENT Specialist",
+    "image": "https://picsum.photos/seed/30-ENT-Specialist/400/400",
+    "rating": 4.8,
+    "reviewCount": 204,
+    "hospital": "City General Hospital",
+    "education": "Mayo Clinic School",
+    "experience": "15+ Years Experience",
+    "consultationFee": 193,
+    "availability": "Available Today",
+    "description": "Dr. ENT focuses on disorders of the ear, nose, and throat using medical and surgical treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "ENT Specialist"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Dr. John Williams",
+    "specialty": "General Physician",
+    "image": "https://picsum.photos/seed/31-General-Physician/400/400",
+    "rating": 5.0,
+    "reviewCount": 99,
+    "hospital": "Sunrise Health",
+    "education": "Johns Hopkins University",
+    "experience": "20+ Years Experience",
+    "consultationFee": 171,
+    "availability": "Available Today",
+    "description": "Dr. General specializes in preventive care and chronic disease management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "General Physician"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Dr. David Rodriguez",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/32-Cardiologist/400/400",
+    "rating": 4.6,
+    "reviewCount": 132,
+    "hospital": "OrthoPlus",
+    "education": "Columbia University",
+    "experience": "11+ Years Experience",
+    "consultationFee": 182,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Dr. Ava Miller",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/33-Pediatrician/400/400",
+    "rating": 4.4,
+    "reviewCount": 144,
+    "hospital": "Prime Medical Center",
+    "education": "Mayo Clinic School",
+    "experience": "17+ Years Experience",
+    "consultationFee": 132,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Dr. David Rodriguez",
+    "specialty": "Neurologist",
+    "image": "https://picsum.photos/seed/34-Neurologist/400/400",
+    "rating": 4.6,
+    "reviewCount": 172,
+    "hospital": "Harmony Clinic",
+    "education": "University of Chicago",
+    "experience": "15+ Years Experience",
+    "consultationFee": 176,
+    "availability": "Available Today",
+    "description": "Dr. Neurologist treats brain, spine, and nerve disorders using cutting-edge neurology care. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Neurologist"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Dr. David Miller",
+    "specialty": "Dermatologist",
+    "image": "https://picsum.photos/seed/35-Dermatologist/400/400",
+    "rating": 4.3,
+    "reviewCount": 157,
+    "hospital": "City General Hospital",
+    "education": "Harvard Medical School",
+    "experience": "14+ Years Experience",
+    "consultationFee": 163,
+    "availability": "Available Today",
+    "description": "Dr. Dermatologist treats skin-related conditions with expertise in cosmetic and medical dermatology. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Dermatologist"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Dr. Olivia Davis",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/36-Pediatrician/400/400",
+    "rating": 5.0,
+    "reviewCount": 232,
+    "hospital": "Harmony Clinic",
+    "education": "University of Chicago",
+    "experience": "10+ Years Experience",
+    "consultationFee": 183,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Dr. Sophia Miller",
+    "specialty": "Psychiatrist",
+    "image": "https://picsum.photos/seed/37-Psychiatrist/400/400",
+    "rating": 4.8,
+    "reviewCount": 219,
+    "hospital": "City General Hospital",
+    "education": "Stanford University",
+    "experience": "5+ Years Experience",
+    "consultationFee": 186,
+    "availability": "Available Today",
+    "description": "Dr. Psychiatrist provides mental health support, including therapy and medication management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Psychiatrist"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Dr. Sophia Brown",
+    "specialty": "Endocrinologist",
+    "image": "https://picsum.photos/seed/38-Endocrinologist/400/400",
+    "rating": 5.0,
+    "reviewCount": 239,
+    "hospital": "Sunrise Health",
+    "education": "Columbia University",
+    "experience": "11+ Years Experience",
+    "consultationFee": 112,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Endocrinologist manages hormonal disorders including diabetes and thyroid conditions. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Endocrinologist"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Dr. Ava Davis",
+    "specialty": "Orthopedic Surgeon",
+    "image": "https://picsum.photos/seed/39-Orthopedic-Surgeon/400/400",
+    "rating": 4.8,
+    "reviewCount": 267,
+    "hospital": "Sunrise Health",
+    "education": "University of Chicago",
+    "experience": "14+ Years Experience",
+    "consultationFee": 161,
+    "availability": "Available Today",
+    "description": "Dr. Orthopedic performs surgeries related to bones, joints, and muscle injuries. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Orthopedic Surgeon"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Dr. Michael Rodriguez",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/40-Cardiologist/400/400",
+    "rating": 4.6,
+    "reviewCount": 146,
+    "hospital": "Sunrise Health",
+    "education": "University of Chicago",
+    "experience": "18+ Years Experience",
+    "consultationFee": 151,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Dr. Emily Davis",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/41-Pediatrician/400/400",
+    "rating": 4.5,
+    "reviewCount": 177,
+    "hospital": "Prime Medical Center",
+    "education": "Johns Hopkins University",
+    "experience": "10+ Years Experience",
+    "consultationFee": 185,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Dr. Emma Williams",
+    "specialty": "Endocrinologist",
+    "image": "https://picsum.photos/seed/42-Endocrinologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 121,
+    "hospital": "Prime Medical Center",
+    "education": "Johns Hopkins University",
+    "experience": "9+ Years Experience",
+    "consultationFee": 173,
+    "availability": "Available Today",
+    "description": "Dr. Endocrinologist manages hormonal disorders including diabetes and thyroid conditions. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Endocrinologist"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Dr. David Garcia",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/43-Pediatrician/400/400",
+    "rating": 5.0,
+    "reviewCount": 104,
+    "hospital": "Harmony Clinic",
+    "education": "Stanford University",
+    "experience": "12+ Years Experience",
+    "consultationFee": 124,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Dr. Emma Davis",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/44-Pediatrician/400/400",
+    "rating": 4.4,
+    "reviewCount": 115,
+    "hospital": "Harmony Clinic",
+    "education": "Johns Hopkins University",
+    "experience": "6+ Years Experience",
+    "consultationFee": 98,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Dr. Sophia Miller",
+    "specialty": "Cardiologist",
+    "image": "https://picsum.photos/seed/45-Cardiologist/400/400",
+    "rating": 4.7,
+    "reviewCount": 60,
+    "hospital": "OrthoPlus",
+    "education": "Stanford University",
+    "experience": "16+ Years Experience",
+    "consultationFee": 85,
+    "availability": "Available Today",
+    "description": "Dr. Cardiologist focuses on heart conditions, offering diagnostics and interventional treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Cardiologist"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Dr. Emma Jones",
+    "specialty": "ENT Specialist",
+    "image": "https://picsum.photos/seed/46-ENT-Specialist/400/400",
+    "rating": 5.0,
+    "reviewCount": 157,
+    "hospital": "City General Hospital",
+    "education": "University of Chicago",
+    "experience": "20+ Years Experience",
+    "consultationFee": 84,
+    "availability": "Available Today",
+    "description": "Dr. ENT focuses on disorders of the ear, nose, and throat using medical and surgical treatments. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "ENT Specialist"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Dr. David Martinez",
+    "specialty": "Endocrinologist",
+    "image": "https://picsum.photos/seed/47-Endocrinologist/400/400",
+    "rating": 4.4,
+    "reviewCount": 91,
+    "hospital": "Sunrise Health",
+    "education": "Johns Hopkins University",
+    "experience": "8+ Years Experience",
+    "consultationFee": 180,
+    "availability": "Available Today",
+    "description": "Dr. Endocrinologist manages hormonal disorders including diabetes and thyroid conditions. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Endocrinologist"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Dr. Robert Brown",
+    "specialty": "Psychiatrist",
+    "image": "https://picsum.photos/seed/48-Psychiatrist/400/400",
+    "rating": 4.9,
+    "reviewCount": 72,
+    "hospital": "OrthoPlus",
+    "education": "University of Chicago",
+    "experience": "5+ Years Experience",
+    "consultationFee": 113,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Psychiatrist provides mental health support, including therapy and medication management. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Psychiatrist"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Dr. Michael Davis",
+    "specialty": "Orthopedic Surgeon",
+    "image": "https://picsum.photos/seed/49-Orthopedic-Surgeon/400/400",
+    "rating": 4.4,
+    "reviewCount": 147,
+    "hospital": "Prime Medical Center",
+    "education": "Mayo Clinic School",
+    "experience": "10+ Years Experience",
+    "consultationFee": 182,
+    "availability": "Next Available Tomorrow",
+    "description": "Dr. Orthopedic performs surgeries related to bones, joints, and muscle injuries. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Orthopedic Surgeon"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Dr. Ava Miller",
+    "specialty": "Pediatrician",
+    "image": "https://picsum.photos/seed/50-Pediatrician/400/400",
+    "rating": 4.6,
+    "reviewCount": 187,
+    "hospital": "OrthoPlus",
+    "education": "University of Chicago",
+    "experience": "9+ Years Experience",
+    "consultationFee": 87,
+    "availability": "Available Today",
+    "description": "Dr. Pediatrician cares for infants and children with a focus on developmental and preventive health. Known for compassionate care and clinical excellence.",
+    "specialties": [
+      "Pediatrician"
+    ]
+  }
+]
