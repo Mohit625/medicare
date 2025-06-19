@@ -9,6 +9,9 @@ import { GeminiResult } from "@/components/GeminiResult";
 import { useUser } from "@clerk/clerk-react";
 import { useState } from "react";
 import { getGeminiFlashResponse } from "./../../utils/geminiApi";
+import {extractDiseasesFromText} from "./../../utils/extractDiseases"
+import {getTopDoctorsByDiseases} from "./../../utils/getTopDoctors"
+//import BookingModal from "@/components/appointment/BookingModal";
 import {
   Stethoscope,
   Users,
@@ -48,6 +51,7 @@ const Dashboard = () => {
     { icon: Footprints, value: "6,390", label: "Steps Today", iconColor: "text-green-500" },
   ];
 
+  
   const doctors = [
     {
       name: "Dr. Sarah Lee",
@@ -113,6 +117,9 @@ const Dashboard = () => {
     "Bluetooth Glucometers",
     "Pulse Oximeters",
   ];
+const [sorted, setsorted] = useState([]);
+const [showModal, setShowModal] = useState(false);
+const [selectedDoctor, setSelectedDoctor] = useState(null);  
 
   const telemedicineFeatures = [
     { icon: Video, text: "HD Video Consultations" },
@@ -230,11 +237,14 @@ const [loading, setLoading] = useState(false);
                   <Upload className="h-4 w-4 mr-2" />
                   Upload Image
                 </Button>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-progress"
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
         disabled={loading}
         onClick={async () => {
           setLoading(true);
           const response = await getGeminiFlashResponse(symptomText);
+          const diseases = extractDiseasesFromText(response);
+          const doctors = await getTopDoctorsByDiseases(diseases);
+          setsorted(doctors);
           setAnalysisResult(response);
           setLoading(false);
         }}>
@@ -259,16 +269,44 @@ const [loading, setLoading] = useState(false);
             </Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {doctors.map((doctor, index) => (
+            {(sorted.length > 0)?
+            sorted.map((doctor, index) => (
+              <>
               <DoctorCard
                 key={index}
+                image={doctor.image}
                 name={doctor.name}
                 specialty={doctor.specialty}
                 rating={doctor.rating}
                 experience={doctor.experience}
-                onBookAppointment={() => console.log(`Book appointment with ${doctor.name}`)}
+                onBookAppointment={() => {
+                  setSelectedDoctor(doctor);
+                  setShowModal(true);
+                }}
               />
-            ))}
+              {/* <BookingModal
+  isOpen={showModal}
+  onClose={() => setShowModal(false)}
+  doctor={selectedDoctor}
+  user={user}
+  onBookingSuccess={(data) => {
+    console.log("Appointment booked:", data);
+    toast.success("Appointment booked!");
+  }}
+/> */}
+              </>
+            ))
+          :
+          doctors.map((doctor, index) => (
+            <DoctorCard
+              key={index}
+              name={doctor.name}
+              specialty={doctor.specialty}
+              rating={doctor.rating}
+              experience={doctor.experience}
+              onBookAppointment={() => console.log(`Book appointment with ${doctor.name}`)}
+            />
+          ))}
           </div>
         </section>
 

@@ -1,20 +1,27 @@
-import doctors from "../data/doctors_list.json";
 import { diseaseToSpecialty } from "./diseaseSpecialtyMap";
 
-export function getTopDoctorsByDiseases(diseases) {
-  const matchedSpecialties = diseases
-    .map(disease => diseaseToSpecialty[disease.toLowerCase()])
-    .filter(Boolean);
+export async function getTopDoctorsByDiseases(diseases) {
+  try {
+    const res = await fetch("http://localhost:3000/api/doctors");
+    const allDoctors = await res.json();
 
-  const uniqueSpecialties = [...new Set(matchedSpecialties)];
+    const matchedSpecialties = diseases
+      .map(disease => diseaseToSpecialty[disease.toLowerCase()])
+      .filter(Boolean);
 
-  const matchingDoctors = doctors.filter(doctor =>
-    uniqueSpecialties.includes(doctor.specialty)
-  );
+    const uniqueSpecialties = [...new Set(matchedSpecialties)];
 
-  const sortedDoctors = matchingDoctors
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4); 
+    const matchingDoctors = allDoctors.filter(doctor =>
+      uniqueSpecialties.includes(doctor.specialty)
+    );
 
-  return sortedDoctors;
+    const sortedDoctors = matchingDoctors
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 4);
+
+    return sortedDoctors;
+  } catch (error) {
+    console.error("Error fetching doctors:", error);
+    return [];
+  }
 }

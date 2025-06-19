@@ -7,6 +7,7 @@ import HomePage from "./../src/pages/HomePage";
 import { Footer } from "./components/home/Footer";
 import Doctors from "./../src/pages/Doctors";
 import Hospitals from "./../src/pages/Hospitals";
+import Appointments from "./pages/Appointments";
 import Blog from "./../src/pages/Blog";
 
 const AuthRedirect = () => {

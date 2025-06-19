@@ -9,14 +9,14 @@ const DoctorCard = ({
   specialty,
   rating,
   experience,
-  imageUrl = "/placeholder.svg",
+  image,
   onBookAppointment,
 }) => {
   return (
     <Card className="bg-blue-50/50 border-blue-100">
       <CardContent className="p-6 text-center">
         <Avatar className="h-16 w-16 mx-auto mb-4">
-          <AvatarImage src={imageUrl} alt={name} />
+          <AvatarImage src={image} alt={name} />
           <AvatarFallback className="bg-blue-100 text-blue-600 text-lg">
             {name
               .split(" ")
