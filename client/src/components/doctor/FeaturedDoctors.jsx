@@ -89,7 +89,7 @@ const FeaturedDoctors = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredDoctors.map((doctor) => (
-            <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-200 border-0">
               <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-32 relative">
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
                   <Avatar className="h-16 w-16 border-4 border-white">

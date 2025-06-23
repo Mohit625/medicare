@@ -68,7 +68,8 @@ export default function Hospitals() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               {/* Medical professionals illustration placeholder */}
-              <div className="bg-gradient-to-br from-blue-100 to-white rounded-2xl p-8 relative overflow-hidden">
+              <img src="https://i.pinimg.com/736x/a9/d9/48/a9d948319476b938f3f20a551e9620d8.jpg" className="rounded-2xl overflow-hidden relative"/>
+              {/* <div className="bg-gradient-to-br from-blue-100 to-white rounded-2xl p-8 relative overflow-hidden">
                 <div className="flex justify-center items-center h-64">
                   <div className="flex space-x-4">
                     <Avatar className="w-20 h-20 border-4 border-white shadow-lg">
@@ -83,7 +84,7 @@ export default function Hospitals() {
                     </Avatar>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
             <div className="space-y-6">
@@ -110,16 +111,16 @@ export default function Hospitals() {
 
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
+          <div className="space-y-4 sm:flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-gray-900">All Hospitals</h2>
             
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">Sort by:</span>
-              <Select>
+              <Select className="w-fit bg-white border-0" >
                 <SelectTrigger className="w-40">
                   <SelectValue placeholder="Relevance"/>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white border-0" >
                   <SelectItem value="relevance">Relevance</SelectItem>
                   <SelectItem value="rating">Rating</SelectItem>
                   <SelectItem value="distance">Distance</SelectItem>
@@ -136,7 +137,7 @@ export default function Hospitals() {
           </div>
           
           <div className="mt-8 flex justify-center">
-  <Pagination>
+  <Pagination className="overflow-x-scroll" >
     <PaginationContent>
       <PaginationItem>
         <PaginationPrevious

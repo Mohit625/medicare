@@ -53,7 +53,7 @@ const ArticleGrid = () => {
   const totalPages = Math.ceil(articles.length / blogsPerPage);
   const [searchQuery, setSearchQuery] = useState("");
 
-  if (loading) return <p className="text-center text-gray-600">Loading hospitals...</p>;
+  if (loading) return <p className="text-center text-gray-600">Loading Blogs...</p>;
   return (
     <div>
       {/* Featured Article */}
@@ -82,7 +82,7 @@ const ArticleGrid = () => {
 
       {/* Pagination */}
       <div className="mt-8 flex justify-center">
-  <Pagination>
+  <Pagination className="overflow-x-scroll" >
     <PaginationContent>
       <PaginationItem>
         <PaginationPrevious

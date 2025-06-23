@@ -21,7 +21,7 @@ const photo = url.data;
 console.log(photo);
   return (
     <Card
-      className={`group cursor-pointer transition-all duration-300 hover:shadow-lg ${
+      className={`group cursor-pointer transition-all duration-300 hover:shadow-lg border-0 ${
         featured ? "lg:col-span-2" : ""
       }`}
     >
@@ -34,7 +34,7 @@ console.log(photo);
         <CardContent
           className={`p-6 ${featured ? "lg:w-1/2 lg:flex lg:flex-col lg:justify-center" : ""}`}
         >
-          <Badge variant="secondary" className={`mb-3 ${categoryColor}`}>
+          <Badge variant="secondary" className={`mb-3 ${categoryColor} w-fit`}>
             {category}
           </Badge>
           <h3

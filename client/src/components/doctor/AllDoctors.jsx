@@ -4,6 +4,8 @@ import { Card, CardContent } from "./../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./../ui/avatar";
 import { Badge } from "./../ui/badge";
 import { useEffect,useState } from "react";
+import { useUser } from "@clerk/clerk-react";
+import BookingModal from "../appointment/BookingModal";
 import {
   Select,
   SelectContent,
@@ -21,8 +23,10 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import SearchFilters from "./SearchFilters";
+import { toast } from "sonner";
 
 const AllDoctors = () => {
+  const { user } = useUser();
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -106,7 +110,8 @@ const [selectedHospital, setSelectedHospital] = useState("all");
   const indexOfFirstDoctor = indexOfLastDoctor - doctorsPerPage;
   const currentDoctors = sortedDoctors.slice(indexOfFirstDoctor, indexOfLastDoctor);
   const totalPages = Math.ceil(allDoctors.length / doctorsPerPage);
-
+  const [showModal, setShowModal] = useState(false);
+const [selectedDoctor, setSelectedDoctor] = useState(null);  
 
 
   return (
@@ -121,7 +126,7 @@ const [selectedHospital, setSelectedHospital] = useState("all");
 />
     <section className="bg-white px-6 py-12">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="sm:flex space-y-4 items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">All Doctors</h2>
           <div className="flex items-center space-x-4">
             <span className="text-sm text-gray-600">Sort by:</span>
@@ -129,7 +134,7 @@ const [selectedHospital, setSelectedHospital] = useState("all");
               <SelectTrigger className="w-40">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white border-0">
                 <SelectItem value="relevance">Relevance</SelectItem>
                 <SelectItem value="rating">Rating</SelectItem>
                 <SelectItem value="experience">Experience</SelectItem>
@@ -139,15 +144,16 @@ const [selectedHospital, setSelectedHospital] = useState("all");
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-8 space-y-6">
           {currentDoctors.map((doctor) => (
+            <>
             <Card key={doctor.id} className="overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-200">
               <CardContent className="p-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   {/* Left: Doctor Info */}
                   <div className="lg:col-span-2">
                     <div className="flex space-x-4">
-                      <Avatar className="h-20 w-20">
+                      <Avatar className="sm:h-20 sm:w-20">
                         <AvatarImage src={doctor.image} alt={doctor.name} />
                         <AvatarFallback className="bg-gray-200 text-gray-700 text-lg">
                           {doctor.name.split(' ').map(n => n[0]).join('')}
@@ -212,28 +218,44 @@ const [selectedHospital, setSelectedHospital] = useState("all");
                   {/* Right: Actions */}
                   <div className="flex flex-col justify-center space-y-3">
                     <Button 
-                      className={`w-full ${
+                      className={`w-full cursor-pointer ${
                         doctor.availability === "Fully Booked" 
                           ? "bg-gray-300 text-gray-500 cursor-not-allowed" 
                           : "bg-blue-600 hover:bg-blue-700 text-white"
                       }`}
                       disabled={doctor.availability === "Fully Booked"}
+                      onClick = {() => {
+                        setSelectedDoctor(doctor);
+                        setShowModal(true);
+                      }}
                     >
                       Book Appointment
                     </Button>
-                    <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                    <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 cursor-pointer">
+                      <a href={`/Doctors/${doctor.id}`}>
                       View Profile
+                      </a>
                     </Button>
                   </div>
                 </div>
               </CardContent>
             </Card>
+            <BookingModal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            doctor={selectedDoctor}
+            user={user}
+            onBookingSuccess={(data) => {
+              toast.success("Appointment booked!");
+            }}
+          />
+          </>
           ))}
         </div>
 
         {/* Pagination */}
         <div className="mt-8 flex justify-center">
-  <Pagination>
+  <Pagination className="overflow-x-scroll" >
     <PaginationContent>
       <PaginationItem>
         <PaginationPrevious

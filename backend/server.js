@@ -3,11 +3,14 @@ import fs from "fs";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Appointment from "./models/Appointment.model.js";
 
 const app = express();
 const PORT = 3000;
 dotenv.config();
+
+import appointmentRoutes from "./routes/appointment.routes.js";
+import userProfileRoutes from "./routes/userProfile.routes.js";
+import DiseasePredictionRoutes from "./routes/diseaseprediction.routes.js";
 
 app.use(cors());
 app.use(express.json());
@@ -21,60 +24,9 @@ const tips = JSON.parse(fs.readFileSync('updated_health_tips.json', 'utf8'));
 const doctors = JSON.parse(fs.readFileSync('doctors_list_with_images.json', 'utf8'));
 const hospitals = JSON.parse(fs.readFileSync('hospitals_list.json', 'utf8'));
 
-// Appointment Router
-const appointmentRouter = express.Router();
-
-appointmentRouter.post("/", async (req, res) => {
-  try {
-    const appointment = new Appointment(req.body);
-    const saved = await appointment.save();
-    res.status(201).json(saved);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to save appointment", details: err });
-  }
-});
-
-appointmentRouter.get("/", async (req, res) => {
-  const { userId } = req.query;
-  try {
-    const appointments = await Appointment.find({ userId });
-    res.json(appointments);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch appointments" });
-  }
-});
-
-app.use('/api/appointments', appointmentRouter);
-
-// DELETE appointment
-appointmentRouter.delete("/:id", async (req, res) => {
-  try {
-    const deleted = await Appointment.findByIdAndDelete(req.params.id);
-    if (!deleted) {
-      return res.status(404).json({ error: "Appointment not found" });
-    }
-    res.json({ message: "Appointment deleted successfully" });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to delete appointment", details: err });
-  }
-});
-
-// PUT (Update) appointment
-appointmentRouter.put("/:id", async (req, res) => {
-  try {
-    const updated = await Appointment.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true, runValidators: true }
-    );
-    if (!updated) {
-      return res.status(404).json({ error: "Appointment not found" });
-    }
-    res.json(updated);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to update appointment", details: err });
-  }
-});
+app.use("/api/user-profile", userProfileRoutes);
+app.use('/api/appointments', appointmentRoutes);
+app.use('/api/disease-predictions', DiseasePredictionRoutes);
 
 // Other APIs
 app.get("/", (req, res) => res.send("API is running..."));

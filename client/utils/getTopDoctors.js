@@ -1,27 +1,38 @@
 import { diseaseToSpecialty } from "./diseaseSpecialtyMap";
 
 export async function getTopDoctorsByDiseases(diseases) {
+  const formattedDiseases = diseases.map(d => `- ${d}`).join("\n");
+  const prompt = `
+You are a medical AI assistant. Given a list of diseases, return the medical specialty best suited to treat each one.
+
+Format your response as valid JSON like:
+[
+  {
+    "specialty": "Relevant Specialty"
+  }
+]
+
+Diseases:
+${formattedDiseases}
+`;
+
   try {
-    const res = await fetch("http://localhost:3000/api/doctors");
-    const allDoctors = await res.json();
-
-    const matchedSpecialties = diseases
-      .map(disease => diseaseToSpecialty[disease.toLowerCase()])
-      .filter(Boolean);
-
-    const uniqueSpecialties = [...new Set(matchedSpecialties)];
-
-    const matchingDoctors = allDoctors.filter(doctor =>
-      uniqueSpecialties.includes(doctor.specialty)
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-pro:generateContent?key=YOUR_API_KEY`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+        }),
+      }
     );
-
-    const sortedDoctors = matchingDoctors
-      .sort((a, b) => b.rating - a.rating)
-      .slice(0, 4);
-
-    return sortedDoctors;
-  } catch (error) {
-    console.error("Error fetching doctors:", error);
+    const data = await res.json();
+    const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const clean = raw?.replace(/```json/g, "").replace(/```/g, "").trim();
+    return JSON.parse(clean);
+  } catch (err) {
+    console.error("❌ Error fetching specialties:", err);
     return [];
   }
 }

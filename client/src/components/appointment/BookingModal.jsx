@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-} from "./../ui/dialog";
-import { Button } from "./../ui/button";
+import { Dialog } from "@headlessui/react";
+import { Button } from "@/components/ui/button";
 
 const BookingModal = ({ isOpen, onClose, doctor, user, onBookingSuccess }) => {
   const [date, setDate] = useState("");
@@ -41,38 +35,38 @@ const BookingModal = ({ isOpen, onClose, doctor, user, onBookingSuccess }) => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Book Appointment with {doctor.name}</DialogTitle>
-        </DialogHeader>
-        <div className="space-y-4">
-          <div>
-            <label className="text-sm font-medium">Date</label>
-            <input
-              type="date"
-              className="w-full border rounded px-3 py-2"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
+    <Dialog open={isOpen} onClose={onClose} className="fixed z-50 inset-0 overflow-y-auto">
+      <div className="flex items-center justify-center min-h-screen px-4">
+        <Dialog.Panel className="bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
+          <Dialog.Title className="text-lg font-bold mb-4">Book Appointment with {doctor?.name}</Dialog.Title>
+          <div className="space-y-4">
+            <div>
+              <label className="text-sm font-medium">Date</label>
+              <input
+                type="date"
+                className="w-full border rounded px-3 py-2"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Time</label>
+              <input
+                type="time"
+                className="w-full border rounded px-3 py-2"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              />
+            </div>
+            <div className="flex justify-end space-x-2 mt-4">
+              <Button variant="outline" onClick={onClose}>Cancel</Button>
+              <Button onClick={handleBooking} disabled={loading}>
+                {loading ? "Booking..." : "Book"}
+              </Button>
+            </div>
           </div>
-          <div>
-            <label className="text-sm font-medium">Time</label>
-            <input
-              type="time"
-              className="w-full border rounded px-3 py-2"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            />
-          </div>
-        </div>
-        <DialogFooter className="mt-4">
-          <Button variant="outline" onClick={onClose}>Cancel</Button>
-          <Button onClick={handleBooking} disabled={loading}>
-            {loading ? "Booking..." : "Book"}
-          </Button>
-        </DialogFooter>
-      </DialogContent>
+        </Dialog.Panel>
+      </div>
     </Dialog>
   );
 };

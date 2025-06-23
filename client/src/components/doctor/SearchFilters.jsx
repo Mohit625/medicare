@@ -28,14 +28,14 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
             <SelectTrigger className="w-full lg:w-48 py-3">
               <SelectValue placeholder="All Specialties" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-0">
               <SelectItem value="all">All Specialties</SelectItem>
-              <SelectItem value="cardiology">Cardiology</SelectItem>
-              <SelectItem value="neurology">Neurology</SelectItem>
-              <SelectItem value="pediatrics">Pediatrics</SelectItem>
-              <SelectItem value="orthopedics">Orthopedics</SelectItem>
-              <SelectItem value="general">General Medicine</SelectItem>
-              <SelectItem value="ophthalmology">Ophthalmology</SelectItem>
+              <SelectItem value="Cardiologist">Cardiology</SelectItem>
+              <SelectItem value="Dermatologist">Dermatology</SelectItem>
+              <SelectItem value="Pediatrician">Pediatrics</SelectItem>
+              <SelectItem value="Orthopedic Surgeon">Orthopedics</SelectItem>
+              <SelectItem value="General Physician">General Medicine</SelectItem>
+              <SelectItem value="Neurologist">Neurology</SelectItem>
             </SelectContent>
           </Select>
 
@@ -43,7 +43,7 @@ const SearchFilters = ({searchText,onSearchChange,selectedSpecialty,onSpecialtyC
             <SelectTrigger className="w-full lg:w-48 py-3">
               <SelectValue placeholder="All Hospitals" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-0">
               <SelectItem value="all">All Hospitals</SelectItem>
               <SelectItem value="city-general">City General Hospital</SelectItem>
               <SelectItem value="memorial">Memorial Medical Center</SelectItem>

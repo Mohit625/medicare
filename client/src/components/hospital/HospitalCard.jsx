@@ -41,7 +41,7 @@ export function HospitalCard({
   };
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-[500px] flex flex-col">
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-200 border-0 max-h-[500px] flex flex-col">
       <div className="h-40 w-full overflow-hidden">
     <img
       src={image}

@@ -1,5 +1,5 @@
 import { Button } from "./../components/ui/button";
-import { Card, CardContent } from "./../components/ui/card";
+import { Card, CardContent, CardHeader } from "./../components/ui/card";
 import { Textarea } from "./../components/ui/textarea";
 import ActionCard from "./../components/user/ActionCard";
 import HealthMetric from "./../components/user/HealthMetric";
@@ -7,11 +7,14 @@ import DoctorCard from "./../components/user/DoctorCard";
 import AppointmentCard from "./../components/user/AppointmentCard";
 import { GeminiResult } from "@/components/GeminiResult";
 import { useUser } from "@clerk/clerk-react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { getGeminiFlashResponse } from "./../../utils/geminiApi";
 import {extractDiseasesFromText} from "./../../utils/extractDiseases"
+import { extractDiseasesFromGeminiJson } from "./../../utils/geminiApi";
 import {getTopDoctorsByDiseases} from "./../../utils/getTopDoctors"
-//import BookingModal from "@/components/appointment/BookingModal";
+import BookingModal from "@/components/appointment/BookingModal";
+import UserProfileDialog from "@/components/user/UserProfileDialog";
+import HealthTips from "@/components/user/HealthTips";
 import {
   Stethoscope,
   Users,
@@ -32,9 +35,28 @@ import {
   Phone,
   CheckCircle,
 } from "lucide-react";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import UploadImageButton from "@/components/user/UploadImageButton";
 
 const Dashboard = () => {
   const { user } = useUser();
+  const [showProfileDialog, setShowProfileDialog] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`http://localhost:3000/api/user-profile?userId=${user.id}`);
+        if (res.status === 404) {
+          setShowProfileDialog(true);
+        }
+      } catch (err) {
+        console.error("Error checking profile", err);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [user]);
   const actionCards = [
     { icon: Stethoscope, title: "Check Symptoms" },
     { icon: Users, title: "Find Doctor" },
@@ -117,33 +139,71 @@ const Dashboard = () => {
     "Bluetooth Glucometers",
     "Pulse Oximeters",
   ];
-const [sorted, setsorted] = useState([]);
-const [showModal, setShowModal] = useState(false);
-const [selectedDoctor, setSelectedDoctor] = useState(null);  
-
   const telemedicineFeatures = [
     { icon: Video, text: "HD Video Consultations" },
     { icon: Pill, text: "e-Prescriptions" },
     { icon: MessageSquare, text: "Secure Chat with Doctors" },
     { icon: Bell, text: "Instant Appointment Reminders" },
   ];
-  const [symptomText, setSymptomText] = useState("");
-const [analysisResult, setAnalysisResult] = useState("");
+const [sorted, setsorted] = useState({});
+const [showModal, setShowModal] = useState(false);
+const [selectedDoctor, setSelectedDoctor] = useState(null);  
+const [symptomText, setSymptomText] = useState("");
 const [loading, setLoading] = useState(false);
-  
+const [imageFile, setImageFile] = useState(null);
+const [diseases, setdiseases] = useState([]);
+const handleAnalyze = async () => {
+  setLoading(true);
+  try {
+    const response = await getGeminiFlashResponse(symptomText);
+    if (!response) throw new Error("Empty response from Gemini");
+
+    const parsed = extractDiseasesFromGeminiJson(response);
+    setdiseases(parsed);
+
+    const res = await fetch(`http://localhost:3000/api/doctors`);
+    const allDoctors = await res.json();
+    const specialtyToDoctors = {};
+
+    for (const disease of parsed) {
+      const specialty = disease.specialty;
+      if (specialty && !specialtyToDoctors[specialty]) {
+        specialtyToDoctors[specialty] = allDoctors.filter(doc => doc.specialty.toLowerCase() === specialty.toLowerCase()).slice(0, 4);
+      }
+    }
+    setsorted(specialtyToDoctors);
+
+    await fetch("http://localhost:3000/api/disease-predictions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: user.id, diseases: parsed }),
+    });
+
+    toast.success("AI Analysis completed!");
+  } catch (err) {
+    toast.error("Failed to analyze symptoms.");
+    console.error("Gemini Error:", err);
+  }
+  setLoading(false);
+};
   return (
     <div className="min-h-screen bg-gray-50">
-      
+      <UserProfileDialog
+    open={showProfileDialog}
+    onClose={() => setShowProfileDialog(false)}
+    onSave={() => console.log("Profile saved")}
+    userId={user?.id}
+  />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Welcome Back, <span className="text-blue-600">{user?.firstName || "U"}</span>!
+              Welcome Back, <span className="text-teal-700">{user?.firstName || "U"}!</span>
             </h1>
             <p className="text-lg text-gray-600 mb-6">
               AI-powered health at your fingertips. Let's find solutions together.
             </p>
-            <div className="flex items-center space-x-2 text-blue-600">
+            <div className="flex items-center space-x-2 text-teal-600">
               <Heart className="h-5 w-5" />
               <span className="font-medium">Stay positive. Stay healthy. We're here for you.</span>
             </div>
@@ -172,9 +232,9 @@ const [loading, setLoading] = useState(false);
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-blue-50/50 border-blue-100">
+            <Card key={index} className="bg-teal-50/50 border-teal-100">
               <CardContent className="p-6 text-center">
-                <div className="text-4xl text-blue-600 mb-4">"</div>
+                <div className="text-4xl text-teal-600 mb-4">"</div>
                 <p className="text-gray-700 font-medium mb-4">{testimonial.quote}</p>
                 {testimonial.author && (
                   <p className="text-sm text-gray-500">{testimonial.author}</p>
@@ -196,12 +256,12 @@ const [loading, setLoading] = useState(false);
             <div className="space-y-3 mb-6">
               {telemedicineFeatures.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <feature.icon className="h-5 w-5 text-blue-600" />
+                  <feature.icon className="h-5 w-5 text-teal-600" />
                   <span className="text-gray-700">{feature.text}</span>
                 </div>
               ))}
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button className="bg-teal-600 hover:bg-teal-700 text-white">
               <Phone className="h-4 w-4 mr-2" />
               Start Consultation
             </Button>
@@ -224,7 +284,7 @@ const [loading, setLoading] = useState(false);
             </p>
           </div>
           
-          <Card className="max-w-4xl mx-auto">
+          <Card className="max-w-4xl mx-auto bg-white border-0">
             <CardContent className="p-6">
               <Textarea
                 value={symptomText}
@@ -233,82 +293,102 @@ const [loading, setLoading] = useState(false);
                 className="min-h-32 mb-4 text-base"
               />
               <div className="flex flex-col sm:flex-row gap-4 justify-between">
-                <Button variant="outline" className="flex items-center">
-                  <Upload className="h-4 w-4 mr-2" />
-                  Upload Image
-                </Button>
+              <UploadImageButton/>
+
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
         disabled={loading}
-        onClick={async () => {
-          setLoading(true);
-          const response = await getGeminiFlashResponse(symptomText);
-          const diseases = extractDiseasesFromText(response);
-          const doctors = await getTopDoctorsByDiseases(diseases);
-          setsorted(doctors);
-          setAnalysisResult(response);
-          setLoading(false);
-        }}>
+        onClick={handleAnalyze}>
                   <Search className="h-4 w-4 mr-2 text-white" />
                   {loading ? "Analyzing..." : "Analyze"}
                 </Button>
               </div>
-              {analysisResult && (
-      
-      <GeminiResult response={analysisResult}/>
-    )}
             </CardContent>
           </Card>
         </section>
+        {diseases.length > 0 && (
+          <Card className="bg-white rounded-lg shadow space-y-4 max-w-4xl mx-auto border-0">
+            <CardHeader>
+              <h3 className="text-lg font-bold text-blue-600">AI-Predicted Diseases</h3>
+            </CardHeader>
+            <CardContent className="grid grid-cols-1 sm:grid-cols-3 gap-6 " >
+              {diseases.slice(0,3).map((d, i) => (
+                <Card ket={i} className="cursor-pointer hover:shadow-md transition-shadow duration-200 bg-teal-50/50 border-teal-100 flex flex-col items-center gap-1 text-center" >
+                  <div className="p-3 bg-blue-100 rounded-full mb-3">
+          <FileText className="h-6 w-6 text-teal-700" />
+        </div>
+                  <h4 className="font-semibold text-gray-900">{d.disease}</h4>
+                  <span className="text-sm text-gray-600">Confidence: {d.confidence}</span>
+                  <p className="text-sm text-gray-700">{d.why}</p>
+                </Card>
+              ))}
+            </CardContent>
+          </Card>
+        )}
 
 
-        <section>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Doctors Who Can Help</h2>
-            <Button variant="link" className="text-blue-600">
-              View all doctors
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {(sorted.length > 0)?
-            sorted.map((doctor, index) => (
-              <>
-              <DoctorCard
-                key={index}
-                image={doctor.image}
-                name={doctor.name}
-                specialty={doctor.specialty}
-                rating={doctor.rating}
-                experience={doctor.experience}
-                onBookAppointment={() => {
-                  setSelectedDoctor(doctor);
-                  setShowModal(true);
-                }}
-              />
-              {/* <BookingModal
-  isOpen={showModal}
-  onClose={() => setShowModal(false)}
-  doctor={selectedDoctor}
-  user={user}
-  onBookingSuccess={(data) => {
-    console.log("Appointment booked:", data);
-    toast.success("Appointment booked!");
-  }}
-/> */}
-              </>
-            ))
-          :
-          doctors.map((doctor, index) => (
+<section>
+  <Card className="border-0 bg-white shadow" >
+
+  <CardHeader className="sm:flex justify-between items-center mb-6">
+    <h2 className="text-2xl font-bold text-gray-900">Doctors Who Can Help</h2>
+    <Button variant="link" className="text-blue-600">
+      View all doctors
+    </Button>
+  </CardHeader>
+<CardContent>
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    {Object.keys(sorted).length > 0 ? (
+      Object.entries(sorted)
+        .slice(0, 1) // Only top 4 specialties
+        .flatMap(([specialty, doctors]) =>
+          doctors.slice(0, 4).map((doctor, index) => (
             <DoctorCard
-              key={index}
+              key={`${specialty}-${index}`}
               name={doctor.name}
-              specialty={doctor.specialty}
+              specialty={doctor.specialty || specialty}
               rating={doctor.rating}
               experience={doctor.experience}
-              onBookAppointment={() => console.log(`Book appointment with ${doctor.name}`)}
+              image={doctor.image}
+              onBookAppointment={() => {
+                setSelectedDoctor(doctor);
+                setShowModal(true);
+              }}
             />
-          ))}
-          </div>
-        </section>
+          ))
+        )
+    ) : (
+      doctors.map((doctor, index) => (
+        <DoctorCard
+          key={index}
+          name={doctor.name}
+          specialty={doctor.specialty}
+          rating={doctor.rating}
+          experience={doctor.experience}
+          image={doctor.image}
+          onBookAppointment={() => {
+            setSelectedDoctor(doctor);
+            setShowModal(true);
+          }}
+        />
+      ))
+    )}
+  </div>
+  {diseases.length > 0 && (
+  <HealthTips disease={diseases[0].disease} />
+)}
+  {selectedDoctor && (
+    <BookingModal
+      isOpen={showModal}
+      onClose={() => setShowModal(false)}
+      doctor={selectedDoctor}
+      user={user}
+      onBookingSuccess={() => toast.success("Appointment booked!")}
+    />
+  )}
+</CardContent>
+  </Card>
+</section>
+
 
         <section>
           <div className="flex justify-between items-center mb-6">

@@ -6,7 +6,7 @@ export function TestimonialCard({ quote, name, location, avatar }) {
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
 
   return (
-    <Card className="h-full">
+    <Card className="h-full bg-white border-0 hover:shadow-lg transition-shadow duration-200 ">
       <CardContent className="p-8 space-y-6">
         <Quote className="w-8 h-8 text-blue-400" />
         

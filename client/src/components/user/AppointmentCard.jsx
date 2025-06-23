@@ -20,7 +20,7 @@ const AppointmentCard = ({
           <div className="flex items-start space-x-4">
             <Avatar className="h-12 w-12">
               <AvatarImage src={imageUrl} alt={doctorName} />
-              <AvatarFallback className="bg-blue-100 text-blue-600">
+              <AvatarFallback className="bg-blue-100 text-teal-600">
                 {doctorName
                   .split(" ")
                   .map((n) => n[0])
@@ -30,7 +30,7 @@ const AppointmentCard = ({
 
             <div className="flex-1">
               <h3 className="font-semibold text-gray-900 mb-1">{doctorName}</h3>
-              <p className="text-sm text-blue-600 mb-3">{specialty}</p>
+              <p className="text-sm text-teal-600 mb-3">{specialty}</p>
 
               <div className="space-y-1">
                 <div className="flex items-center text-sm text-gray-600">

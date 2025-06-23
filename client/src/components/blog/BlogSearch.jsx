@@ -20,12 +20,12 @@ const BlogSearch = () => {
             className="pl-10"
           />
         </div>
-        <div className="flex gap-3">
-          <Select>
+        <div className="sm:flex space-y-2 gap-3 bg-accent">
+          <Select className="bg-white" >
             <SelectTrigger className="w-40">
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-0"  >
               <SelectItem value="all">All Categories</SelectItem>
               <SelectItem value="innovation">Innovation</SelectItem>
               <SelectItem value="wellness">Wellness</SelectItem>
@@ -38,7 +38,7 @@ const BlogSearch = () => {
             <SelectTrigger className="w-32">
               <SelectValue placeholder="All Authors" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border-0" >
               <SelectItem value="all">All Authors</SelectItem>
               <SelectItem value="dr-john-evans">Dr. John Evans</SelectItem>
               <SelectItem value="dr-emma-carter">Dr. Emma Carter</SelectItem>

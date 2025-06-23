@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="bg-gray-50 px-6 py-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
           <div className="space-y-6">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
               Our Medical Professionals
@@ -26,45 +26,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="bg-blue-100 rounded-3xl p-8 h-80 flex items-center justify-center">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-300 rounded-full"></div>
-                </div>
-                <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-400 rounded-full"></div>
-                </div>
-                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-300 rounded-full"></div>
-                </div>
-                
-                {/* Row 2 */}
-                <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-400 rounded-full"></div>
-                </div>
-                <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center relative -mt-2">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full"></div>
-                  {/* Stethoscope representation */}
-                  <div className="absolute -bottom-1 w-8 h-1 bg-blue-700 rounded-full"></div>
-                </div>
-                <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-400 rounded-full"></div>
-                </div>
-                
-                {/* Row 3 */}
-                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-300 rounded-full"></div>
-                </div>
-                <div className="w-16 h-16 bg-blue-300 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-400 rounded-full"></div>
-                </div>
-                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-300 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <img src="https://i.pinimg.com/736x/23/3f/77/233f77fb2a64534fb7c7fd54935cbfb7.jpg" className="sm:h-80 relative rounded-3xl w-full"/>
         </div>
       </div>
     </section>

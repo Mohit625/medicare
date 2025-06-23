@@ -28,9 +28,10 @@ export function HeroSection() {
           </div>
           
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-teal-100 to-blue-200 rounded-2xl p-6 relative overflow-hidden">
               {/* Hospital building illustration placeholder */}
-              <div className="relative z-10">
+                    <img src="https://i.pinimg.com/736x/d9/f9/30/d9f9305022919ee584b770230b919e10.jpg" alt="" className="rounded-2xl" />
+              {/* <div className="relative z-10">
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
                   <div className="flex items-center justify-center h-48">
                     <div className="text-center space-y-4">
@@ -53,7 +54,7 @@ export function HeroSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               
               <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full"></div>
               <div className="absolute bottom-6 left-6 w-8 h-8 bg-white/20 rounded-full"></div>
