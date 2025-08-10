@@ -147,7 +147,7 @@ const [selectedDoctor, setSelectedDoctor] = useState(null);
         <div className="grid md:grid-cols-2 gap-8 space-y-6">
           {currentDoctors.map((doctor) => (
             <>
-            <Card key={doctor.id} className="overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-200">
+            <Card key={doctor._id} className="overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-200">
               <CardContent className="p-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   {/* Left: Doctor Info */}
@@ -232,7 +232,7 @@ const [selectedDoctor, setSelectedDoctor] = useState(null);
                       Book Appointment
                     </Button>
                     <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 cursor-pointer">
-                      <a href={`/Doctors/${doctor.id}`}>
+                      <a href={`/Doctors/${doctor._id}`}>
                       View Profile
                       </a>
                     </Button>

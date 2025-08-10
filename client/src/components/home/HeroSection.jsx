@@ -16,9 +16,11 @@ export function HeroSection() {
               All powered by Medicare AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
+              <a href="/doctor-login">
               <Button size="lg" className="bg-teal-600 hover:bg-teal-700 px-8">
-                Find a Doctor
+                Doctor Login
               </Button>
+              </a>
               <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 px-8">
                 Learn More
               </Button>

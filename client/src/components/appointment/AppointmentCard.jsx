@@ -10,9 +10,10 @@ import {
   MapPinIcon,
   VideoIcon,
   UserIcon,
+  TrashIcon
 } from "lucide-react";
 
-export function AppointmentCard({ appointment , onCancel = () => {}}) {
+export function AppointmentCard({ appointment , stats , onCancel = () => {} , onRebook = () => {}}) {
   const {
     userId,
     userName,
@@ -26,24 +27,26 @@ export function AppointmentCard({ appointment , onCancel = () => {}}) {
     type,
     location,
     description,
-    status = "upcoming",
+    status,
   } = appointment;
   const dates = new Date(date);
+  const apptDate = new Date(`${date} ${time}`);
+  const now = new Date();
   const fullDate = dates.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric"
   }); 
   const getStatusText = () => {
-    if (status === "completed") return "Completed";
-    if (status === "cancelled") return "Cancelled";
+    if (apptDate < now && status === "upcoming" ) return "Completed";
+    if (status === "Cancelled") return "Cancelled";
     return "Video Call";
   };
   const [imageurl, setimageurl] = useState("")
   const statusColor =
-      status === "completed"
+  (apptDate < now && status === "upcoming" )
         ? "bg-green-100 text-green-700"
-        : status === "cancelled"
+        : status === "Cancelled"
         ? "bg-red-100 text-red-700"
         : "bg-blue-100 text-blue-700";
         const handleAnalyze = async () => {
@@ -98,7 +101,7 @@ export function AppointmentCard({ appointment , onCancel = () => {}}) {
         </div>
   
         <div className="flex items-center gap-2  mt-4 sm:mt-auto">
-          {status === "upcoming" ? (
+          {stats === "upcoming" ? (
             <>
             <Button 
             variant="outline"
@@ -117,7 +120,16 @@ export function AppointmentCard({ appointment , onCancel = () => {}}) {
       </Button>
             </>
           ) : (
-            <Button variant="outline" className="text-green-600 border-green-300 hover:bg-green-50">Rebook</Button>
+            <>
+            <Button variant="outline" className="text-green-600 border-green-300 hover:bg-green-50 cursor-pointer">Rebook</Button>
+            <Button
+        variant="outline"
+        className="text-red-600 border-red-300 hover:bg-red-50 cursor-pointer"
+        onClick={() => onCancel(appointment._id)}
+      >
+        <TrashIcon className="w-4 h-4" />
+      </Button>
+            </>
           )}
         </div>
       </div>

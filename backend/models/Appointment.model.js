@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
 const appointmentSchema = new mongoose.Schema({
-  userId: { type: String, required: true },       // Unique ID from Clerk/Auth
-  userName: { type: String, required: true },     // Full name of the user
-  userEmail: { type: String, required: true },    // Email of the user
-
+  userId: { type: String, required: true },       
+  userName: { type: String, required: true },     
+  userEmail: { type: String, required: true },    
+  issue: { type: String, required: true },    
   doctorId: { type: String },
   doctorName: { type: String, required: true },
   specialty: { type: String, required: true },
+  fees: { type: String, required: true },
   date: { type: String, required: true },
   time: { type: String, required: true },
   location: { type: String },
@@ -15,7 +16,6 @@ const appointmentSchema = new mongoose.Schema({
 
   status: {
     type: String,
-    enum: ["upcoming", "completed", "cancelled"],
     default: "upcoming",
   },
 }, { timestamps: true });

@@ -107,7 +107,7 @@ const currentPath = location.pathname;
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t shadow-sm px-4 py-3 space-y-3">
+        <div className="md:hidden bg-white shadow-sm px-4 py-3 space-y-3">
           {links.map((link) => (
             <Link
               key={link.name}

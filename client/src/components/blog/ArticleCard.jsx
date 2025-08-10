@@ -26,13 +26,13 @@ console.log(photo);
       }`}
     >
       <div className={`${featured ? "lg:flex" : ""}`}>
-        <div className={`${featured ? "lg:w-1/2" : ""}`}>
+        <div className={`${featured ? "lg:w-2/5" : ""}`}>
           <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-            <img src={url} alt={category}></img>
+            <img src={image} alt={category}></img>
           </div>
         </div>
         <CardContent
-          className={`p-6 ${featured ? "lg:w-1/2 lg:flex lg:flex-col lg:justify-center" : ""}`}
+          className={`p-6 ${featured ? "lg:w-3/5 lg:flex lg:flex-col lg:justify-center" : ""}`}
         >
           <Badge variant="secondary" className={`mb-3 ${categoryColor} w-fit`}>
             {category}

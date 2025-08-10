@@ -23,7 +23,22 @@ const Button = ({ children, className = "", variant = "solid", ...props }) => {
 // Main Appointments page
 const Appointments = () => {
   const { user, isSignedIn } = useUser();
+  const stat = ["upcoming","past"];
 const [upcomingAppointments, setUpcomingAppointments] = useState([]);
+const [pastAppointments, setPastAppointments] = useState([]);
+const [rebookDoctor, setRebookDoctor] = useState(null);
+const [rebookIssue, setRebookIssue] = useState("");
+
+const handleRebook = async (appointment) => {
+  try {
+    const res = await fetch(`http://localhost:3000/api/doctors/${appointment.doctorId}`);
+    const doctor = await res.json();
+    setRebookDoctor(doctor);
+    setShowRebookModal(true);
+  } catch (err) {
+    console.error("Failed to fetch doctor for rebooking:", err);
+  }
+};
 useEffect(() => {
   if (!isSignedIn) return;
 
@@ -31,7 +46,22 @@ useEffect(() => {
     try {
       const res = await fetch(`http://localhost:3000/api/appointments?userId=${user.id}`);
       const data = await res.json();
-      setUpcomingAppointments(data);
+      const now = new Date();
+
+      const upcoming = [];
+      const past = [];
+
+      data.forEach((appt) => {
+        const apptDate = new Date(`${appt.date} ${appt.time}`);
+        if (apptDate >= now && appt.status !== "Cancelled") {
+          upcoming.push(appt);
+        } else {
+          past.push(appt);
+        }
+      });
+
+      setUpcomingAppointments(upcoming);
+      setPastAppointments(past);
     } catch (err) {
       console.error("Failed to fetch appointments:", err);
     }
@@ -41,6 +71,22 @@ useEffect(() => {
 }, [user, isSignedIn]);
 const handleCancelAppointment = async (id) => {
   if (!confirm("Are you sure you want to cancel this appointment?")) return;
+  try {
+    const res = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "Cancelled" }),
+    });
+    const updated = await res.json();
+    setUpcomingAppointments((prev) => prev.filter((appt) => appt._id !== id));
+    setPastAppointments((prev) => [...prev, updated]);
+
+  } catch (err) {
+    console.error("Failed to Cancel appointment:", err);
+  }
+};
+const handleDeleteAppointment = async (id) => {
+  if (!confirm("Are you sure you want to cancel this appointment?")) return;
 
   try {
     await fetch(`http://localhost:3000/api/appointments/${id}`, {
@@ -48,50 +94,9 @@ const handleCancelAppointment = async (id) => {
     });
     setUpcomingAppointments((prev) => prev.filter((appt) => appt._id !== id));
   } catch (err) {
-    console.error("Failed to cancel appointment:", err);
+    console.error("Failed to Delete appointment:", err);
   }
 };
-  const pastAppointments = [
-    {
-      id: "4",
-      doctor: {
-        name: "Dr. Michael Chen",
-        specialty: "Orthopedic Surgeon",
-        image:
-          "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=80&q=80",
-      },
-      date: "May 15, 2025",
-      time: "2:00 PM",
-      type: "in-person",
-      status: "completed",
-    },
-    {
-      id: "5",
-      doctor: {
-        name: "Dr. Lisa Wong",
-        specialty: "Dermatologist",
-        image:
-          "https://images.unsplash.com/photo-1594824388853-c6b99e4b5c88?auto=format&fit=crop&w=80&q=80",
-      },
-      date: "April 28, 2025",
-      time: "11:30 AM",
-      type: "video",
-      status: "completed",
-    },
-    {
-        id: "6",
-        doctor: {
-          name: "Dr. Robert Smith",
-          specialty: "General Physician",
-          image:
-            "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        },
-        date: "April 10, 2025",
-        time: "9:15 AM",
-        type: "in-person",
-        status: "cancelled",
-      },
-  ];
   
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -123,21 +128,28 @@ const handleCancelAppointment = async (id) => {
 
 
         <section className="mb-10">
+        {upcomingAppointments.length >0?
+        <>
           <h2 className="text-xl font-semibold mb-4">Upcoming Appointments</h2>
           <div className="grid md:grid-cols-2 gap-8 ">
             {upcomingAppointments?.map((appt,index) => (
-              <AppointmentCard key={index} appointment={appt} onCancel={handleCancelAppointment} />
+              <AppointmentCard key={index} appointment={appt} stats={stat[0]} onCancel={handleCancelAppointment} />
             ))}
           </div>
+        </>
+          : <h2 className="text-xl font-semibold m-auto">You haven’t booked any appointments yet.</h2>}
         </section>
 
         <section>
+        {pastAppointments.length >0?
+        <>
           <h2 className="text-xl font-semibold mb-4">Past Appointments</h2>
           <div className="grid md:grid-cols-2 gap-8 ">
             {pastAppointments.map((appt) => (
-              <AppointmentCard key={appt.id} appointment={appt} onCancel={handleCancelAppointment}/>
+              <AppointmentCard key={appt._id} appointment={appt} stats={stat[1]} onCancel={handleDeleteAppointment} onRebook={handleRebook}/>
             ))}
           </div>
+        </>:<div></div>}
         </section>
       </main>
     </div>

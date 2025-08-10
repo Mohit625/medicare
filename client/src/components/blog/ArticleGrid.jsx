@@ -25,7 +25,7 @@ const ArticleGrid = () => {
     readTime: "7 min read",
     category: "Innovation",
     categoryColor: "bg-blue-100 text-blue-800",
-    image: "/placeholder.svg",
+    image: "https://i.pinimg.com/736x/2d/77/77/2d7777979f03366e7c7043cd3bc482b6.jpg",
     imageAlt:
       "🏥 health innovation, doctors, digital devices, modern hospital, digital painting",
   };

@@ -14,14 +14,20 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const { userId } = req.query;
+  const { userId, doctorId } = req.query;
+
   try {
-    const appointments = await Appointment.find({ userId });
+    const filter = {};
+    if (userId) filter.userId = userId;
+    if (doctorId) filter.doctorId = doctorId;
+
+    const appointments = await Appointment.find(filter);
     res.json(appointments);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch appointments" });
   }
 });
+
 
 router.delete("/:id", async (req, res) => {
   try {

@@ -1,22 +1,42 @@
 import { useRef, useState } from "react";
 import { Upload } from "lucide-react";
-import { Button } from "@/components/ui/button"; // your Button component path
+import { Button } from "@/components/ui/button";
 
-export default function UploadImageButton() {
+export default function UploadImageButton({ userId }) {
   const inputRef = useRef(null);
   const [imageFile, setImageFile] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleClick = () => {
-    if (inputRef.current) {
-      inputRef.current.click(); // manually trigger the file input
-    }
+    inputRef.current?.click();
   };
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const file = e.target.files?.[0];
-    if (file) {
-      setImageFile(file);
-      console.log("Selected image:", file);
+    if (!file) return;
+
+    setImageFile(file);
+
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("userId", userId); // Make sure you're passing this prop
+
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:3000/api/image-disease-predictions", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Upload failed");
+
+      console.log("Prediction result:", data);
+    } catch (err) {
+      console.error("Error:", err.message);
+      alert("Upload failed: " + err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -27,9 +47,10 @@ export default function UploadImageButton() {
         variant="outline"
         className="flex items-center"
         onClick={handleClick}
+        disabled={loading}
       >
         <Upload className="h-4 w-4 mr-2" />
-        Upload Image
+        {loading ? "Uploading..." : "Upload Image"}
       </Button>
 
       <input

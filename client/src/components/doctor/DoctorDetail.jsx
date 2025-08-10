@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { useParams } from "react-router-dom";
+import BookingModal from "../appointment/BookingModal";
+import { useUser } from "@clerk/clerk-react";
 import {
   Select,
   SelectContent,
@@ -28,10 +30,14 @@ import {
 } from "lucide-react";
 
 const DoctorDetail = () => {
+  const { user } = useUser();
   const [appointmentType, setAppointmentType] = useState("video");
   const [allDoctors, setAllDoctors] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+const [selectedDoctor, setSelectedDoctor] = useState(null);  
 const [relatedDoctors, setRelatedDoctors] = useState([]);
-  const { id } = useParams(); // 👈 Gets "3" from the URL
+  const { id } = useParams(); 
+  console.log(id);
   const [doctor, setDoctor] = useState(null);
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
@@ -138,9 +144,21 @@ const [relatedDoctors, setRelatedDoctors] = useState([]);
                     </div>
                   </div>
                   <div className="flex gap-4 align-middle">
-                      <Button className="bg-blue-600 hover:bg-blue-500 text-white font-semibold"> <Calendar className="w-4 h-4"/> Book Appointment</Button>
+                      <Button className="bg-blue-600 hover:bg-blue-500 text-white font-semibold" onClick = {() => {
+                        setSelectedDoctor(doctor);
+                        setShowModal(true);
+                      }}> <Calendar className="w-4 h-4"/> Book Appointment</Button>
                       <Button className="font-semibold" > <Video className="w-4 h-4" /> Video</Button>
                       </div>
+                      <BookingModal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            doctor={selectedDoctor}
+            user={user}
+            onBookingSuccess={(data) => {
+              toast.success("Appointment booked!");
+            }}
+          />
                 </div>
                   </div>
 

@@ -187,7 +187,7 @@ const handleAnalyze = async () => {
   setLoading(false);
 };
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 z-0">
       <UserProfileDialog
     open={showProfileDialog}
     onClose={() => setShowProfileDialog(false)}

@@ -29,7 +29,7 @@ const CalendarCard = ({ appointments = [] }) => {
           </div>
 
           <div className="grid grid-cols-7 gap-1 flex-1">
-            {Array.from({ length: 30 }, (_, i) => {
+            {Array.from({ length: new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate()  }, (_, i) => {
               const day = i + 1;
               const isToday = day === currentDay;
               const isAppointed = appointmentDays.includes(day);
