@@ -22,7 +22,7 @@ const BookingModal = ({ isOpen, onClose, doctor, user }) => {
           userName: user.fullName,
           userEmail: user.primaryEmailAddress.emailAddress,
           issue,
-          doctorId: doctor.id,
+          doctorId: doctor._id,
           doctorName: doctor.name,
           specialty: doctor.specialty,
           fees:doctor.consultationFee,
