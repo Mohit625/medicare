@@ -62,11 +62,11 @@ const [relatedDoctors, setRelatedDoctors] = useState([]);
 
   useEffect(() => {
     const fetchDoctorAndRelated = async () => {
-      const res1 = await fetch(`http://localhost:3000/api/doctors/${id}`);
+      const res1 = await fetch(`https://medicare-ired.onrender.com/api/doctors/${id}`);
       const currentDoctor = await res1.json();
       setDoctor(currentDoctor);
   
-      const res2 = await fetch("http://localhost:3000/api/doctors");
+      const res2 = await fetch("https://medicare-ired.onrender.com/api/doctors");
       const doctorsList = await res2.json();
       setAllDoctors(doctorsList);
   

@@ -50,7 +50,7 @@ export function AppointmentCard({ appointment , stats , onCancel = () => {} , on
         ? "bg-red-100 text-red-700"
         : "bg-blue-100 text-blue-700";
         const handleAnalyze = async () => {
-          const res =  await fetch(`http://localhost:3000/api/doctors/${doctorId}`);
+          const res =  await fetch(`https://medicare-ired.onrender.com/api/doctors/${doctorId}`);
           const data = await res.json();
           setimageurl(data?.image);
         }

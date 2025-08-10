@@ -13,7 +13,7 @@ const BookingModal = ({ isOpen, onClose, doctor, user }) => {
     if (!date || !time || !issue) return alert("Please fill all fields.");
     setLoading(true);
 
-    const res = await fetch("http://localhost:3000/api/create-checkout-session", {
+    const res = await fetch("https://medicare-ired.onrender.com/api/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -39,7 +39,7 @@ export default function Hospitals() {
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3000/api/hospitals") 
+    fetch("https://medicare-ired.onrender.com/api/hospitals") 
       .then(res => res.json())
       .then(data => {
         setHospitals(data);

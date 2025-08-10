@@ -23,7 +23,7 @@ export default function UploadImageButton({ userId }) {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/image-disease-predictions", {
+      const res = await fetch("https://medicare-ired.onrender.com/api/image-disease-predictions", {
         method: "POST",
         body: formData,
       });

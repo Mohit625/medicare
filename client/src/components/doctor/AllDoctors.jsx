@@ -64,7 +64,7 @@ const AllDoctors = () => {
   const [allDoctors, setallDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3000/api/doctors") 
+    fetch("https://medicare-ired.onrender.com/api/doctors") 
       .then(res => res.json())
       .then(data => {
         setallDoctors(data);

@@ -26,7 +26,7 @@ import {
   
     const handleSubmit = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/user-profile", {
+        const res = await fetch("https://medicare-ired.onrender.com/api/user-profile", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),

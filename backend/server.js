@@ -21,9 +21,18 @@ import HealthTip from "./models/HealthTip.js";
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("✅ MongoDB connected"))
-.catch((err) => console.error("❌ MongoDB connection failed:", err));
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("✅ MongoDB Connected");
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+})
+.catch(err => {
+  console.error("❌ MongoDB connection failed:", err);
+  process.exit(1);
+});
 
 app.use("/api", stripeRoutes);
 app.use("/api/user-profile", userProfileRoutes);
@@ -54,8 +63,9 @@ app.get('/api/doctors', async (_, res) => {
   try {
     const doctors = await Doctor.find();
     res.json(doctors);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch doctors" });
+  } catch (error) {
+    console.error("Error in GET /doctors:", error);
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -116,6 +126,4 @@ app.get('/api/hospitals/:name', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`🚀 API server running at http://localhost:${PORT}`);
-});
+
