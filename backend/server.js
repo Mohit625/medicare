@@ -3,7 +3,8 @@ import fs from "fs";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
+import path from "path";
+import os from "os";
 const app = express();
 const PORT = 3000;
 dotenv.config();
@@ -20,8 +21,15 @@ import HealthTip from "./models/HealthTip.js";
 
 app.use(cors({ origin: '*' }));
 app.use(express.json());
-const uploadPath = '/tmp/uploads'; // instead of '/var/task/uploads'
-fs.mkdirSync(uploadPath, { recursive: true });
+// Save file to /tmp/uploads
+const uploadDir = path.join(os.tmpdir(), 'uploads');
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+const savePath = path.join(uploadDir, 'myfile.png');
+fs.writeFileSync(savePath, fileBuffer);  // replace fileBuffer with your actual data
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
