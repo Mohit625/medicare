@@ -17,7 +17,7 @@ const Health_Records = () => {
       
         const fetchuserdata = async () => {
           try {
-            const res = await fetch(`https://medicare-ired.onrender.com/api/user-profile?userId=${user.id}`);
+            const res = await fetch(`https://medicare-coral-psi.vercel.app/api/user-profile?userId=${user.id}`);
             const data = await res.json();
             setuserdata(data);
           } catch (err) {

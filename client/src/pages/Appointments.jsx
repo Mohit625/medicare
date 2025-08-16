@@ -31,7 +31,7 @@ const [rebookIssue, setRebookIssue] = useState("");
 
 const handleRebook = async (appointment) => {
   try {
-    const res = await fetch(`https://medicare-ired.onrender.com/api/doctors/${appointment.doctorId}`);
+    const res = await fetch(`https://medicare-coral-psi.vercel.app/api/doctors/${appointment.doctorId}`);
     const doctor = await res.json();
     setRebookDoctor(doctor);
     setShowRebookModal(true);
@@ -44,7 +44,7 @@ useEffect(() => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await fetch(`https://medicare-ired.onrender.com/api/appointments?userId=${user.id}`);
+      const res = await fetch(`https://medicare-coral-psi.vercel.app/api/appointments?userId=${user.id}`);
       const data = await res.json();
       const now = new Date();
 
@@ -72,7 +72,7 @@ useEffect(() => {
 const handleCancelAppointment = async (id) => {
   if (!confirm("Are you sure you want to cancel this appointment?")) return;
   try {
-    const res = await fetch(`https://medicare-ired.onrender.com/api/appointments/${id}`, {
+    const res = await fetch(`https://medicare-coral-psi.vercel.app/api/appointments/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: "Cancelled" }),
@@ -89,7 +89,7 @@ const handleDeleteAppointment = async (id) => {
   if (!confirm("Are you sure you want to cancel this appointment?")) return;
 
   try {
-    await fetch(`https://medicare-ired.onrender.com/api/appointments/${id}`, {
+    await fetch(`https://medicare-coral-psi.vercel.app/api/appointments/${id}`, {
       method: "DELETE",
     });
     setUpcomingAppointments((prev) => prev.filter((appt) => appt._id !== id));

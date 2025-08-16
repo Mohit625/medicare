@@ -42,7 +42,7 @@ const DoctorDashboard = () => {
     const fetchAppointments = async () => {
       if (!doctorId) return;
       try {
-        const res = await axios.get(`https://medicare-ired.onrender.com/api/appointments?doctorId=${doctorId}`);
+        const res = await axios.get(`https://medicare-coral-psi.vercel.app/api/appointments?doctorId=${doctorId}`);
         setAppointments(res.data);
 
         const grouped = res.data.reduce((acc, cur) => {

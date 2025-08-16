@@ -32,7 +32,7 @@ const ArticleGrid = () => {
   const [articles, setarticles] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("https://medicare-ired.onrender.com/api/tips") // Update if deployed elsewhere
+    fetch("https://medicare-coral-psi.vercel.app/api/tips") // Update if deployed elsewhere
       .then(res => res.json())
       .then(data => {
         setarticles(data);

@@ -39,7 +39,7 @@ export default function Hospitals() {
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("https://medicare-ired.onrender.com/api/hospitals") 
+    fetch("https://medicare-coral-psi.vercel.app/api/hospitals") 
       .then(res => res.json())
       .then(data => {
         setHospitals(data);

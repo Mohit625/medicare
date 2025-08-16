@@ -14,7 +14,7 @@ const PaymentSuccess = () => {
 
       const appointment = JSON.parse(decodeURIComponent(rawData));
 
-      const res = await fetch("https://medicare-ired.onrender.com/api/appointments", {
+      const res = await fetch("https://medicare-coral-psi.vercel.app/api/appointments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointment),

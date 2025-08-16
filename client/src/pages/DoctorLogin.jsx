@@ -12,7 +12,7 @@ const DoctorLogin = () => {
     }
 
     try {
-      const res = await fetch("https://medicare-ired.onrender.com/api/doctors/login", {
+      const res = await fetch("https://medicare-coral-psi.vercel.app/api/doctors/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, password }),

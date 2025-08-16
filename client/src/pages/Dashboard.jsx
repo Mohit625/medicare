@@ -46,7 +46,7 @@ const Dashboard = () => {
   useEffect(() => {
     const timer = setTimeout(async () => {
       try {
-        const res = await fetch(`https://medicare-ired.onrender.com/api/user-profile?userId=${user.id}`);
+        const res = await fetch(`https://medicare-coral-psi.vercel.app/api/user-profile?userId=${user.id}`);
         if (res.status === 404) {
           setShowProfileDialog(true);
         }
@@ -161,7 +161,7 @@ const handleAnalyze = async () => {
     const parsed = extractDiseasesFromGeminiJson(response);
     setdiseases(parsed);
 
-    const res = await fetch(`https://medicare-ired.onrender.com/api/doctors`);
+    const res = await fetch(`https://medicare-coral-psi.vercel.app/api/doctors`);
     const allDoctors = await res.json();
     const specialtyToDoctors = {};
 
@@ -173,7 +173,7 @@ const handleAnalyze = async () => {
     }
     setsorted(specialtyToDoctors);
 
-    await fetch("https://medicare-ired.onrender.com/api/disease-predictions", {
+    await fetch("https://medicare-coral-psi.vercel.app/api/disease-predictions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: user.id, diseases: parsed }),
