@@ -44,6 +44,8 @@ const DoctorDashboard = () => {
       try {
         const res = await fetch(`https://medicare-coral-psi.vercel.app/api/appointments?doctorId=${doctorId}`);
         const data = await res.json();
+        console.log(data);
+        
         setAppointments(data);
 
         const grouped = data.reduce((acc, cur) => {
