@@ -28,8 +28,8 @@ router.post("/create-checkout-session", async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `http://localhost:5173/payment-success?data=${encodeURIComponent(JSON.stringify(appointmentDetails))}`,
-      cancel_url: `http://localhost:5173/payment-failure`,
+      success_url: `https://mediclif.netlify.app/payment-success?data=${encodeURIComponent(JSON.stringify(appointmentDetails))}`,
+      cancel_url: `https://mediclif.netlify.app/payment-failure`,
     });
 
     res.json({ url: session.url });
