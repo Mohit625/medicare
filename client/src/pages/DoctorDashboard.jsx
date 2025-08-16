@@ -42,16 +42,17 @@ const DoctorDashboard = () => {
     const fetchAppointments = async () => {
       if (!doctorId) return;
       try {
-        const res = await axios.get(`https://medicare-coral-psi.vercel.app/api/appointments?doctorId=${doctorId}`);
-        setAppointments(res.data);
+        const res = await fetch(`https://medicare-coral-psi.vercel.app/api/appointments?doctorId=${doctorId}`);
+        const data = await res.json();
+        setAppointments(data);
 
-        const grouped = res.data.reduce((acc, cur) => {
+        const grouped = data.reduce((acc, cur) => {
           acc[cur.status] = (acc[cur.status] || 0) + 1;
           return acc;
         }, {});
 
         setStats({
-          total: res.data.length,
+          total: data.length,
           video: grouped["Video"] || 0,
           previsit: grouped["PreVisit"] || 0,
           cancelled: grouped["Cancelled"] || 0,
