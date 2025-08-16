@@ -20,6 +20,8 @@ import HealthTip from "./models/HealthTip.js";
 
 app.use(cors({ origin: '*' }));
 app.use(express.json());
+const uploadPath = '/tmp/uploads'; // instead of '/var/task/uploads'
+fs.mkdirSync(uploadPath, { recursive: true });
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
