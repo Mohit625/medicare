@@ -12,7 +12,7 @@ const DoctorDashboard = () => {
   const [timeStr, setTimeStr] = useState("");
 
   const doctor = JSON.parse(localStorage.getItem("doctor"));
-  const doctorId = doctor?.id || "";
+  const doctorId = doctor?._id || "";
 
   useEffect(() => {
     const now = new Date();
@@ -44,8 +44,6 @@ const DoctorDashboard = () => {
       try {
         const res = await fetch(`https://medicare-coral-psi.vercel.app/api/appointments?doctorId=${doctorId}`);
         const data = await res.json();
-        console.log(data);
-        
         setAppointments(data);
 
         const grouped = data.reduce((acc, cur) => {
