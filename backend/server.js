@@ -11,7 +11,7 @@ dotenv.config();
 import appointmentRoutes from "./routes/appointment.routes.js";
 import userProfileRoutes from "./routes/userProfile.routes.js";
 import DiseasePredictionRoutes from "./routes/diseaseprediction.routes.js";
-import ImageDetectionRoutes from "./routes/imagediseasedetection.routes.js"
+//import ImageDetectionRoutes from "./routes/imagediseasedetection.routes.js"
 import stripeRoutes from "./routes/stripe.routes.js";
 
 import Doctor from "./models/Doctor.js";
@@ -40,7 +40,7 @@ app.use("/api", stripeRoutes);
 app.use("/api/user-profile", userProfileRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/disease-predictions', DiseasePredictionRoutes);
-app.use('/api/image-disease-predictions', ImageDetectionRoutes);
+//app.use('/api/image-disease-predictions', ImageDetectionRoutes);
 
 app.get("/", (req, res) => res.send("API is running..."));
 app.get('/api/tips', async (_, res) => {
