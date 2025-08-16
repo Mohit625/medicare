@@ -22,14 +22,14 @@ import HealthTip from "./models/HealthTip.js";
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 // Save file to /tmp/uploads
-const uploadDir = path.join(os.tmpdir(), 'uploads');
+// const uploadDir = path.join(os.tmpdir(), 'uploads');
 
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+// if (!fs.existsSync(uploadDir)) {
+//   fs.mkdirSync(uploadDir, { recursive: true });
+// }
 
-const savePath = path.join(uploadDir, 'myfile.png');
-fs.writeFileSync(savePath, fileBuffer);  // replace fileBuffer with your actual data
+// const savePath = path.join(uploadDir, 'myfile.png');
+// fs.writeFileSync(savePath, fileBuffer);  // replace fileBuffer with your actual data
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
